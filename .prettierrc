@@ -1,0 +1,12 @@
+{
+  "singleQuote": true,
+  "semi": false,
+  "overrides": [
+    {
+      "files": "*.json5",
+      "options": {
+        "parser": "json"
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/loader.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cairo"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="app">
+      <div id="loading-bg">
+        <div
+          class="loading-logo"
+          style="margin-left: 10px !important; margin-bottom: 20px !important"
+        >
+          <!-- svg logo -->
+
+          <img
+            style="margin-bottom: 20px !important; display: inline-block"
+            src="./src/assets/images/logo.svg"
+            alt="logo"
+            width="70px"
+            height="70px"
+          />
+        </div>
+        <div class="loading">
+          <div class="effect-1 effects"></div>
+          <div class="effect-2 effects"></div>
+          <div class="effect-3 effects"></div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+    <script>
+      const loaderColor =
+        localStorage.getItem('materialize-initial-loader-bg') || '#FFFFFF'
+      const primaryColor =
+        localStorage.getItem('materialize-initial-loader-color') || '#666CFF'
+
+      if (loaderColor)
+        document.documentElement.style.setProperty(
+          '--initial-loader-bg',
+          loaderColor
+        )
+
+      if (primaryColor)
+        document.documentElement.style.setProperty(
+          '--initial-loader-color',
+          primaryColor
+        )
+      watch: {
+        localStorage.getItem('lang')
+        this.pageTitle =
+          localStorage.getItem('lang') === 'en'
+            ? '7lPos website'
+            : '7lPos website '
+        document.title = this.pageTitle // Update the HTML document title
+      }
+    </script>
+  </body>
+</html>

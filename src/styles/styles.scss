@@ -1,0 +1,40 @@
+.mainHeading {
+  color: #000;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 89.95px;
+  text-align: center;
+}
+
+.subtitle {
+  color: #000;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 67.46px;
+  text-align: center;
+}
+
+.mainPargraph {
+  color: #000;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 37.48px;
+  text-align: center;
+}
+
+.mainButton {
+  border-radius: 24px;
+  background: linear-gradient(142.84deg, #157d99 0%, #70a1e5 100%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  gap: 10px;
+  padding-block: 14px;
+  padding-inline: 42px;
+  text-align: center;
+}
+
+.v-theme--light {
+  background: #fff !important;
+}
