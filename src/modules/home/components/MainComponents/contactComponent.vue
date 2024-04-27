@@ -4,9 +4,9 @@ const mainPargraph =
   '      نظام POS متعدد الاستخدامات الخاص بنا هو الحل الأمثل لإدارة أعمالك بكفاءة ومرونة. سواء كنت تدير مطعماً، متجراً للبيع بالتجزئة.'
 
 const buttonContent = 'ارسال'
-import locationIcon from '@/assets/images/icons/location.svg'
-import messageIcon from '@/assets/images/icons/message.svg'
-import phoneIcon from '@/assets/images/icons/phone.svg'
+import locationIcon from '@/assets/images/icons/location.svg';
+import messageIcon from '@/assets/images/icons/message.svg';
+import phoneIcon from '@/assets/images/icons/phone.svg';
 const contacts = [
   {
     label: 'رقم الجوال ',
@@ -35,7 +35,7 @@ const iconStyle = (color) => {
 </script>
 
 <template>
-  <div class="d-flex contact" style="flex-direction: column">
+  <div class="d-flex contact" style="flex-direction: column;">
     <!-- Start Heading -->
 
     <div class="d-flex justify-center align-center">
@@ -47,7 +47,9 @@ const iconStyle = (color) => {
     <!-- Start:: contact info -->
     <VRow>
       <VCol cols="12" md="6" sm="12">
+        <span class="card-title">اتصل بنا</span>
         <div class="single-contact">
+         
           <div class="contact-form">
             <div class="input-container">
               <input placeholder="الاسم" class="input-field" type="text" />
@@ -68,6 +70,7 @@ const iconStyle = (color) => {
         </div>
       </VCol>
       <VCol cols="12" md="6" sm="12">
+        <span class="card-title"> معلومات التواصل</span>
         <div class="single-contact">
           <div class="contact-info">
             <div v-for="contact in contacts" class="single-contact-info">
@@ -89,6 +92,17 @@ const iconStyle = (color) => {
 
 <style lang="scss">
 .contact {
+  .card-title {
+    display: block;
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 44.98px;
+    margin-block-end: 10px;
+
+    // margin-inline-start: 10px;
+  }
+
   .single-contact {
     padding: 5px;
     border: 1px solid #b2d3e2;

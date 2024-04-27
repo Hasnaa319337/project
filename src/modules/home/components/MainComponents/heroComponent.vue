@@ -5,7 +5,7 @@ const buttonContent = 'انضم الينا'
 <template>
   <div
     class="d-flex justify-center align-center"
-    style="flex-direction: column"
+    style="flex-direction: column;"
   >
     <div class="heading d-flex align-center">
       <h3 class="text-h3 mainHeading">
@@ -17,7 +17,7 @@ const buttonContent = 'انضم الينا'
       </p>
     </div>
     <MainButton :content="buttonContent" />
-    <div class="dashboardImage">
+    <div class="dashboardImage moveUpDown">
       <img src="@/assets/images/dashboard.svg" />
     </div>
   </div>
@@ -35,6 +35,20 @@ const buttonContent = 'انضم الينا'
 
   img {
     inline-size: 100%;
+  }
+}
+
+.moveUpDown {
+  animation: moveUpDownAnimation 2s infinite alternate;
+}
+
+@keyframes moveUpDownAnimation {
+  0% {
+    transform: translateY(0); /* Start position */
+  }
+
+  100% {
+    transform: translateY(20px); /* End position */
   }
 }
 </style>

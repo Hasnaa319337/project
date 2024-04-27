@@ -41,9 +41,10 @@ const props = defineProps<Props>()
   border-radius: 16px !important;
   border-image-repeat: stretch; // Repeat value
   border-image-slice: 1; // Slicing value
-  // border-image-source: linear-gradient(142.84deg, #157d99 0%, #70a1e5 100%);
   margin-block: 20px;
   margin-inline: 0;
+
+  // padding-inline-start: 10px;
 
   .recommanded-bg {
     background: #f3f8f9;
@@ -109,9 +110,14 @@ const props = defineProps<Props>()
 
     svg {
       background-color: transparent !important;
+      block-size: 18px !important;
       color: #000 !important;
       font-size: 16px;
-      font-weight: 500 !important;
+      font-weight: 300 !important;
+    }
+
+    span {
+      margin-inline-start: 6px;
     }
   }
 }
