@@ -31,10 +31,8 @@ loadFonts()
 import Carousel from 'primevue/carousel'
 import PrimeVue from 'primevue/config'
 
-// import "primeflex/primeflex.css"
-// import "primeicons/primeicons.css"
-import 'primevue/resources/primevue.min.css'
-import 'primevue/resources/themes/aura-light-green/theme.css'
+// import 'primevue/resources/primevue.min.css'
+// import 'primevue/resources/themes/aura-light-green/theme.css'
 
 // Create vue app
 const app = createApp(App)
