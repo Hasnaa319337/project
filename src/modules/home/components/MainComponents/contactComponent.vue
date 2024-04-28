@@ -179,7 +179,6 @@ const iconStyle = (color) => {
       .info {
         h6 {
           color: #000;
-          font-family: Cairo;
           font-size: 20px;
           font-weight: 700;
           line-height: 37.48px;
@@ -187,11 +186,9 @@ const iconStyle = (color) => {
 
         p {
           color: #000;
-          font-family: Cairo;
           font-size: 16px;
           font-weight: 500;
           line-height: 29.98px;
-          text-align: end;
         }
       }
     }

@@ -39,6 +39,16 @@
   background: #fff !important;
 }
 
-.layout-navbar-and-nav-container {
+.layout-navbar-and-nav-container,
+.layout-vertical-nav {
   display: none !important;
+}
+
+.iconDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  block-size: 64px;
+  inline-size: 64px;
 }

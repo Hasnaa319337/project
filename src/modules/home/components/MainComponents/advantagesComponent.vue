@@ -132,6 +132,7 @@ const iconStyle = (color) => {
       font-size: 16px;
       font-weight: 300;
       line-height: 29.98px;
+      text-align: justify;
     }
   }
 }

@@ -39,16 +39,16 @@ const buttonContent = 'انضم الينا'
 }
 
 .moveUpDown {
-  animation: moveUpDownAnimation 2s infinite alternate;
+  animation: moveUpDownAnimation 1.1s infinite alternate;
 }
 
 @keyframes moveUpDownAnimation {
   0% {
-    transform: translateY(0); /* Start position */
+    transform: translateY(10); /* Start position */
   }
 
   100% {
-    transform: translateY(20px); /* End position */
+    transform: translateY(50px); /* End position */
   }
 }
 </style>
