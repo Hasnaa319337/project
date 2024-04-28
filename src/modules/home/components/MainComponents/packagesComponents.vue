@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import PackageCard from '../packages/PackageCard.vue';
+import PackageCard from '../packages/PackageCard.vue'
 const subtitle = 'الباقات'
 const mainPargraph =
   '      نظام POS متعدد الاستخدامات الخاص بنا هو الحل الأمثل لإدارة أعمالك بكفاءة ومرونة. سواء كنت تدير مطعماً، متجراً للبيع بالتجزئة.'
 
 const tab = ref('monthly')
-const items = ref([{title:"شهري", value:'monthly'}
-  ,
-  {title:'سنوي', value:'yearly'}
+const items = ref([
+  { title: 'شهري', value: 'monthly' },
+  { title: 'سنوي', value: 'yearly' },
 ])
 const packages = ref([
   {
@@ -55,7 +55,7 @@ const packages = ref([
 <template>
   <div
     class="d-flex justify-center align-center packages"
-    style="flex-direction: column;"
+    style="flex-direction: column"
   >
     <!-- Start Heading -->
 
@@ -66,26 +66,26 @@ const packages = ref([
     <!-- Start:: Packages -->
     <v-tabs v-model="tab" bg-color="transparent" color="basil" grow>
       <v-tab v-for="(item, index) in items" :key="item.value" :value="index">
-        {{ item.title }} 
+        {{ item.title }}
       </v-tab>
-      
     </v-tabs>
 
     <v-card>
       <v-window v-model="tab" class="window">
-        <v-window-item class="row d-flex">
-          <VCol
-
-            v-for="pack in packages"
-            flat
-            class="package-card"
-            cols="12"
-            lg="6"
-            md="6"
-            sm="12"
-          >
-            <PackageCard :package="pack" />
-          </VCol>
+        <v-window-item>
+          <VRow>
+            <VCol
+              v-for="pack in packages"
+              flat
+              class="package-card"
+              cols="12"
+              lg="6"
+              md="6"
+              sm="12"
+            >
+              <PackageCard :package="pack" />
+            </VCol>
+          </VRow>
         </v-window-item>
       </v-window>
 

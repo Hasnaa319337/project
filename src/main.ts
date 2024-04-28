@@ -26,6 +26,16 @@ import Vue3FormWizard from 'vue3-form-wizard'
 import 'vue3-form-wizard/dist/style.css'
 
 loadFonts()
+
+// PrimeVue
+import Carousel from 'primevue/carousel'
+import PrimeVue from 'primevue/config'
+
+// import "primeflex/primeflex.css"
+// import "primeicons/primeicons.css"
+import 'primevue/resources/primevue.min.css'
+import 'primevue/resources/themes/aura-light-green/theme.css'
+
 // Create vue app
 const app = createApp(App)
 
@@ -35,6 +45,10 @@ app.use(Vue3Toasity, {
   position: toast.POSITION.BOTTOM_RIGHT,
   // ...
 } as ToastContainerOptions)
+
+// PrimeVue
+app.use(PrimeVue)
+app.component('Carousel', Carousel)
 
 // Use plugins
 loadFonts()
