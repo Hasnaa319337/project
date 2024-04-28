@@ -72,20 +72,18 @@ const packages = ref([
 
     <v-card>
       <v-window v-model="tab" class="window">
-        <v-window-item>
-          <VRow>
-            <VCol
-              v-for="pack in packages"
-              flat
-              class="package-card"
-              cols="12"
-              lg="6"
-              md="6"
-              sm="12"
-            >
-              <PackageCard :package="pack" />
-            </VCol>
-          </VRow>
+        <v-window-item class="row d-flex">
+          <VCol
+            v-for="pack in packages"
+            flat
+            class="package-card"
+            cols="12"
+            lg="6"
+            md="6"
+            sm="12"
+          >
+            <PackageCard :package="pack" />
+          </VCol>
         </v-window-item>
       </v-window>
 
