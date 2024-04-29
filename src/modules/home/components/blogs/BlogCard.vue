@@ -156,6 +156,24 @@ export default {
 }
 
 .blog-card {
+  .p-link {
+    border: 1px solid #c5dcef;
+    border-radius: 50%;
+
+    svg {
+      color: #0f578b;
+      inline-size: 12px;
+    }
+  }
+
+  .p-disabled {
+    background: linear-gradient(142.84deg, #157d99 0%, #70a1e5 100%);
+
+    svg {
+      color: #fff;
+    }
+  }
+
   .p-carousel-next {
     transform: rotate(180deg);
   }
