@@ -181,5 +181,9 @@ export default {
   .p-carousel-prev {
     transform: rotate(180deg);
   }
+
+  .p-carousel-indicators {
+    display: none;
+  }
 }
 </style>
