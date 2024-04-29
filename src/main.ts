@@ -20,19 +20,16 @@ import 'maz-ui/css/main.css' // or  import 'maz-ui/styles';
 import Vue3Toasity, { toast, type ToastContainerOptions } from 'vue3-toastify'
 import 'vue3-toastify/dist/index.css'
 
-//Wizard
-
-import Vue3FormWizard from 'vue3-form-wizard'
-import 'vue3-form-wizard/dist/style.css'
-
 loadFonts()
 
 // PrimeVue
 import Carousel from 'primevue/carousel'
 import PrimeVue from 'primevue/config'
 
-// import 'primevue/resources/primevue.min.css'
-// import 'primevue/resources/themes/aura-light-green/theme.css'
+import 'primeflex/primeflex.css'
+import 'primeicons/primeicons.css'
+import 'primevue/resources/primevue.min.css' /* Deprecated */
+import 'primevue/resources/themes/aura-light-green/theme.css'
 
 // Create vue app
 const app = createApp(App)
@@ -60,7 +57,7 @@ app.use(vuetify)
 app.use(createPinia())
 app.use(router)
 app.use(layoutsPlugin)
-app.use(Vue3FormWizard)
+
 app.use(i18n)
 // Mount vue app
 
