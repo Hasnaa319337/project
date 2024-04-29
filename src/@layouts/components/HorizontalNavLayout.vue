@@ -1,16 +1,16 @@
 <script lang="ts" setup>
-import { HorizontalNav } from '@layouts/components';
-import type { HorizontalNavItems } from '@layouts/types';
+import { HorizontalNav } from '@layouts/components'
+import type { HorizontalNavItems } from '@layouts/types'
 
 // ℹ️ Using import from `@layouts` causing build to hangup
 // import { useLayouts } from '@layouts'
-import locationIcon from '@/assets/images/icons/location.svg';
-import messageIcon from '@/assets/images/icons/message.svg';
-import phoneIcon from '@/assets/images/icons/phone.svg';
-import logo from '@/assets/images/logo.svg';
-import { useLayouts } from '@layouts/composable/useLayouts';
+import locationIcon from '@/assets/images/icons/location.svg'
+import messageIcon from '@/assets/images/icons/message.svg'
+import phoneIcon from '@/assets/images/icons/phone.svg'
+import logo from '@/assets/images/logo.svg'
+import { useLayouts } from '@layouts/composable/useLayouts'
 
-
+const buttoncontent = 'انضم الينا'
 const iconStyle = (color) => {
   return {
     backgroundColor: `${color} !important`,
@@ -18,13 +18,13 @@ const iconStyle = (color) => {
 }
 
 const headers = [
-  {title:'الرئيسية'  },
-  {title:'اهم الخصائص'  },
-  {title:'مصطلحات النظام'  },
-  {title:'المميزات'  },
-  {title:'الباقات'  },
-  {title:'المدونه'  },
-  {title:'تواصل معنا'  },
+  { title: 'الرئيسية' },
+  { title: 'اهم الخصائص' },
+  { title: 'مصطلحات النظام' },
+  { title: 'المميزات' },
+  { title: 'الباقات' },
+  { title: 'المدونه' },
+  { title: 'تواصل معنا' },
 ]
 
 const contactInfos = [
@@ -48,20 +48,16 @@ const contactInfos = [
   },
 ]
 
-
 defineProps<{
   navItems: HorizontalNavItems
 }>()
 
-
-
 const socials = [
-  {icon:'mdi-facebook'},
-  {icon:'mdi-instagram'},
-  {icon:'mdi-youtube'},
-  {icon:'mdi-twitter'}
+  { icon: 'mdi-facebook' },
+  { icon: 'mdi-instagram' },
+  { icon: 'mdi-youtube' },
+  { icon: 'mdi-twitter' },
 ]
-
 
 const { y: windowScrollY } = useWindowScroll()
 const { width: windowWidth } = useWindowSize()
@@ -104,8 +100,11 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
 
       <!-- Buttons -->
       <div class="layout-navbar">
-        <div class="navbar-content-container">
-          <button>ss</button>
+        <div class="navbar-content-container d-flex align-center">
+          <MainButton
+            :content="buttoncontent"
+            class="headerButton d-flex align-center"
+          />
         </div>
       </div>
     </div>
@@ -133,84 +132,94 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
     </footer> -->
 
     <footer class="footer">
-     <VContainer>
-      <VRow>
-        <VCol cols="12" md="4" sm="12">
-          <div>
-            <div class="logo">
-              <img :src="logo"/>
+      <VContainer>
+        <VRow>
+          <VCol cols="12" md="4" sm="12">
+            <div>
+              <div class="logo">
+                <img :src="logo" />
+              </div>
+              <div class="content">
+                <p>
+                  نظام POS متعدد الاستخدامات الخاص بنا هو الحل الأمثل لإدارة
+                  أعمالك بكفاءة ومرونة. سواء كنت تدير مطعماً، متجراً للبيع
+                  بالتجزئة. نظام POS متعدد الاستخدامات الخاص بنا هو الحل الأمثل
+                  لإدارة أعمالك بكفاءة ومرونة. سواء كنت تدير مطعماً، متجراً
+                  للبيع بالتجزئة.
+                </p>
+              </div>
+              <div class="socials">
+                <VList>
+                  <VListItem v-for="social in socials">
+                    <VIcon :icon="social.icon" />
+                  </VListItem>
+                </VList>
+              </div>
             </div>
-            <div class="content">
-              <p>
-                نظام POS متعدد الاستخدامات الخاص بنا هو الحل الأمثل لإدارة أعمالك بكفاءة ومرونة. سواء كنت تدير مطعماً، متجراً للبيع بالتجزئة. نظام POS متعدد الاستخدامات الخاص بنا هو الحل الأمثل لإدارة أعمالك بكفاءة ومرونة. سواء كنت تدير مطعماً، متجراً للبيع بالتجزئة.
-              </p>
-            </div>
-            <div class="socials">
-              <VList>
-                <VListItem v-for="social in socials" >
-                  <VIcon :icon="social.icon"/>
-                </VListItem>
+          </VCol>
+          <VCol cols="12" md="4" sm="12">
+            <div>
+              <h3>خريطة الموقع</h3>
+              <VList class="headers-list">
+                <div class="column">
+                  <VListItem
+                    v-for="(head, index) in headers.slice(0, 5)"
+                    :key="index"
+                    class="headers"
+                  >
+                    <VIcon icon="mdi-chevron-left" />
+                    <span>{{ head.title }}</span>
+                  </VListItem>
+                </div>
+                <div class="column">
+                  <VListItem
+                    v-for="(head, index) in headers.slice(5)"
+                    :key="index"
+                    class="headers"
+                  >
+                    <VIcon icon="mdi-chevron-left" />
+                    <span>{{ head.title }}</span>
+                  </VListItem>
+                </div>
               </VList>
             </div>
-          </div>
-        </VCol>
-        <VCol cols="12" md="4" sm="12">
-          <div>
-            <h3>خريطة الموقع</h3>
-            <VList class="headers-list">
-  <div class="column">
-    <VListItem v-for="(head, index) in headers.slice(0, 5)" :key="index" class="headers">
-      <VIcon icon="mdi-chevron-left"/>
-      <span>{{ head.title }}</span>
-    </VListItem>
-  </div>
-  <div class="column">
-    <VListItem v-for="(head, index) in headers.slice(5)" :key="index" class="headers">
-      <VIcon icon="mdi-chevron-left"/>
-      <span>{{ head.title }}</span>
-    </VListItem>
-  </div>
-</VList>
+          </VCol>
+          <VCol cols="12" md="4" sm="12">
+            <div>
+              <h3>بيانات التواصل</h3>
+              <div style="margin-block-start: 22px">
+                <VRow v-for="contact in contactInfos" class="contactInfos">
+                  <VCol cols="12" md="3" sm="3">
+                    <div class="iconDiv" :style="iconStyle(contact.color)">
+                      <img :src="contact.icon" />
+                    </div>
+                  </VCol>
 
-
-          </div>
-        </VCol>
-        <VCol cols="12" md="4" sm="12">
-          <div>
-            <h3>بيانات التواصل</h3>
-           <div style="    margin-block-start: 22px;
-">
-            <VRow v-for="contact in  contactInfos" class="contactInfos">
-
-
-<VCol cols="12" md="3" sm="3"  >
-              <div class="iconDiv" :style="iconStyle(contact.color)">
-
-                <img :src="contact.icon" />
+                  <VCol
+                    cols="12"
+                    md="9"
+                    sm="9"
+                    style="padding: 12px 0"
+                    class="d-flex align-center"
+                  >
+                    <div class="info">
+                      <p>{{ contact.value }}</p>
+                    </div>
+                  </VCol>
+                </VRow>
               </div>
-            </VCol>
-
-<VCol cols="12" md="9" sm="9"  style="padding: 12px 0;" class="d-flex align-center">
-<div class="info">
-
-              <p>{{ contact.value }}</p>
-</div>
-</VCol>
-          </VRow>
-           </div>
-          </div>
-        </VCol>
-      </VRow>
-     </VContainer>
-      
+            </div>
+          </VCol>
+        </VRow>
+      </VContainer>
     </footer>
   </div>
 </template>
 
 <style lang="scss">
-@use "@configured-variables" as variables;
-@use "@layouts/styles/placeholders";
-@use "@layouts/styles/mixins";
+@use '@configured-variables' as variables;
+@use '@layouts/styles/placeholders';
+@use '@layouts/styles/mixins';
 
 .layout-wrapper {
   &.layout-nav-type-horizontal {
@@ -405,4 +414,9 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
   }
 }
 
+.headerButton {
+  button {
+    margin-block-end: 0 !important;
+  }
+}
 </style>

@@ -40,7 +40,42 @@
   background: #fff !important;
 }
 
-.layout-navbar-and-nav-container,
+.layout-horizontal-nav {
+  .horizontal-nav-content-container {
+    display: flex;
+    align-items: center;
+
+    .nav-link {
+      color: #000 !important;
+      font-size: 16px;
+      font-weight: 500 !important;
+      line-height: 29.98px;
+    }
+
+    .router-link-active {
+      color: #157d99 !important;
+      font-size: 16px;
+      font-weight: 500 !important;
+      line-height: 29.98px;
+    }
+  }
+}
+
+.layout-navbar-and-nav-container {
+  border-radius: 50px;
+  margin: auto;
+  block-size: 79px;
+  inline-size: 90%;
+  margin-block-end: 50px;
+  margin-block-start: 20px;
+  padding-block-start: 5px;
+  padding-inline-start: 55px;
+}
+
+.layout-navbar {
+  border: none !important;
+}
+
 .layout-vertical-nav {
   display: none !important;
 }
