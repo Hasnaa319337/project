@@ -66,7 +66,7 @@ const clearSearchAndCloseDialog = () => {
 }
 
 watchEffect(() => {
-  if (!searchQuery.value.length) searchResults.value = []
+  // if (!searchQuery.value.length) searchResults.value = []
 })
 
 // 👉 get fucus on search list

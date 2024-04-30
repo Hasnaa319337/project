@@ -4,6 +4,7 @@ import type { HorizontalNavItems } from '@layouts/types'
 
 // ℹ️ Using import from `@layouts` causing build to hangup
 // import { useLayouts } from '@layouts'
+import NavBarI18n from '@/@core/components/I18n.vue'
 import locationIcon from '@/assets/images/icons/location.svg'
 import messageIcon from '@/assets/images/icons/message.svg'
 import phoneIcon from '@/assets/images/icons/phone.svg'
@@ -100,7 +101,12 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
 
       <!-- Buttons -->
       <div class="layout-navbar">
-        <div class="navbar-content-container d-flex align-center">
+        <div class="navbar-content-container d-flex align-center gap-3">
+          <!-- <AppBarSearch/> -->
+          <div class="searchIcon" style="color: #000 !important">
+            <VIcon icon="mdi-magnify" />
+          </div>
+          <NavBarI18n class="mx-1" />
           <MainButton
             :content="buttoncontent"
             class="headerButton d-flex align-center"
