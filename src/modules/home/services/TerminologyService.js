@@ -1,38 +1,37 @@
-import blog1 from '@/assets/images/blog1.svg'
-import blog2 from '@/assets/images/blog2.svg'
-import blog3 from '@/assets/images/blog3.svg'
+import system2 from '@/assets/images/system2.svg'
+import system3 from '@/assets/images/system3.svg'
 
-export const ProductService = {
+export const TerminologyService = {
   getProductsData() {
     return [
       {
-        image: blog1,
-        title: 'نص مؤقت',
-        date: 'يناير 23 , 2024',
+        image: system3,
+        title: '1 نص مؤقت',
+
         text: 'نظام POS متعدد الاستخدامات الخاص بنا هو الحل الأمثل لإدارة أعمالك بكفاءة ومرونة. سواء كنت تدير مطعماً، متجراً للبيع بالتجزئة. نظام POS متعدد الاستخدامات الخاص بنا هو',
       },
       {
-        image: blog2,
-        title: 'نص مؤقت',
-        date: 'يناير 23 , 2024',
+        image: system2,
+        title: '2 نص مؤقت',
+
         text: 'نظام POS متعدد الاستخدامات الخاص بنا هو الحل الأمثل لإدارة أعمالك بكفاءة ومرونة. سواء كنت تدير مطعماً، متجراً للبيع بالتجزئة. نظام POS متعدد الاستخدامات الخاص بنا هو',
       },
       {
-        image: blog3,
+        image: system3,
         title: 'نص مؤقت',
-        date: 'يناير 23 , 2024',
+
         text: 'نظام POS متعدد الاستخدامات الخاص بنا هو الحل الأمثل لإدارة أعمالك بكفاءة ومرونة. سواء كنت تدير مطعماً، متجراً للبيع بالتجزئة. نظام POS متعدد الاستخدامات الخاص بنا هو',
       },
       {
-        image: blog2,
+        image: system2,
         title: 'نص مؤقت',
-        date: 'يناير 23 , 2024',
+
         text: 'نظام POS متعدد الاستخدامات الخاص بنا هو الحل الأمثل لإدارة أعمالك بكفاءة ومرونة. سواء كنت تدير مطعماً، متجراً للبيع بالتجزئة. نظام POS متعدد الاستخدامات الخاص بنا هو',
       },
       {
-        image: blog1,
+        image: system3,
         title: 'نص مؤقت',
-        date: 'يناير 23 , 2024',
+
         text: 'نظام POS متعدد الاستخدامات الخاص بنا هو الحل الأمثل لإدارة أعمالك بكفاءة ومرونة. سواء كنت تدير مطعماً، متجراً للبيع بالتجزئة. نظام POS متعدد الاستخدامات الخاص بنا هو',
       },
     ]

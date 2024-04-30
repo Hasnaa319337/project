@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import { ProductService } from '@/modules/home/services/ProductService'
+import { BlogService } from '@/modules/home/services/BlogService'
 
 export default {
   data() {
@@ -69,7 +69,7 @@ export default {
     }
   },
   mounted() {
-    ProductService.getProductsSmall().then(
+    BlogService.getProductsSmall().then(
       (data) => (this.products = data.slice(0, 9))
     )
   },
