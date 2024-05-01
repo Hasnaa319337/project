@@ -4,8 +4,8 @@ const buttonContent = 'انضم الينا'
 
 <template>
   <div
-    class="d-flex justify-center align-center"
-    style="flex-direction: column;"
+    class="d-flex justify-center align-center hero"
+    style="flex-direction: column"
   >
     <div class="heading d-flex align-center">
       <h3 class="text-h3 mainHeading">
@@ -24,6 +24,9 @@ const buttonContent = 'انضم الينا'
 </template>
 
 <style lang="scss" scoped>
+.hero {
+}
+
 .heading {
   flex-direction: column;
   gap: 25px;

@@ -9,17 +9,40 @@ import PropertiesComponent from '../components/MainComponents/propertiesComponen
 </script>
 
 <template>
-  <div>
+  <div class="home">
     <VContainer>
       <HeroComponent />
-      <PropertiesComponent />
     </VContainer>
+    <PropertiesComponent />
     <SystemTerminology />
-    <VContainer>
+    <div class="both">
       <AdvantagesComponent />
       <PackagesComponents />
+    </div>
+    <div class="blogs">
       <BlogsComponent />
+    </div>
+    <VContainer>
       <ContactComponent />
     </VContainer>
   </div>
 </template>
+<style lang="scss">
+.home {
+  .both {
+    background-image: url('@/assets/images/advantages.svg') !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    block-size: 100%;
+    inline-size: 100%;
+  }
+
+  .blogs {
+    background-image: url('@/assets/images/blogs.svg') !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    block-size: 100%;
+    inline-size: 100%;
+  }
+}
+</style>

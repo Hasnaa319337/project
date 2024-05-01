@@ -36,10 +36,6 @@
   text-align: center;
 }
 
-.v-theme--light {
-  background: #fff !important;
-}
-
 .layout-horizontal-nav {
   .horizontal-nav-content-container {
     display: flex;
@@ -91,4 +87,13 @@
 
 body {
   font-family: Cairo !important;
+}
+
+.v-theme--light {
+  background: none !important;
+}
+
+.layout-page-content {
+  padding: 0 !important;
+  margin: 0 !important;
 }

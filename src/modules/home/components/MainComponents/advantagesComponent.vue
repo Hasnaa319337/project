@@ -59,17 +59,19 @@ const iconStyle = (color) => {
   <div class="advantages">
     <div
       class="d-flex justify-center align-center"
-      style="flex-direction: column;"
+      style="flex-direction: column"
     >
       <!-- Start Heading -->
 
       <AppHeading :subtitle="subtitle" :mainPargraph="mainPargraph" />
       <!-- End Heading -->
+    </div>
 
-      <!-- Start:: Cards -->
+    <!-- Start:: Cards -->
+    <VContainer>
       <VRow class="cards">
         <VCol cols="12" md="4" sm="6" v-for="card in cards">
-          <div class="card" style="flex-direction: column;">
+          <div class="card" style="flex-direction: column">
             <VIcon
               :icon="card.icon"
               class="iconCircle"
@@ -81,9 +83,9 @@ const iconStyle = (color) => {
           </div>
         </VCol>
       </VRow>
+    </VContainer>
 
-      <!-- End:: Cards -->
-    </div>
+    <!-- End:: Cards -->
   </div>
 </template>
 
@@ -141,5 +143,4 @@ const iconStyle = (color) => {
 .card:hover h6 {
   color: #fff;
 }
-
 </style>

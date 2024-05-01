@@ -18,30 +18,35 @@ const mainPargraph =
 </script>
 
 <template>
-  <div
-    class="d-flex justify-center align-center properties"
-    style="flex-direction: column"
-  >
-    <!-- Start Heading -->
+  <div class="properties">
+    <div
+      class="d-flex justify-center align-center report-header"
+      style="flex-direction: column"
+    >
+      <!-- Start Heading -->
 
-    <AppHeading :subtitle="subtitle" :mainPargraph="mainPargraph" />
+      <AppHeading :subtitle="subtitle" :mainPargraph="mainPargraph" />
 
-    <!-- End Heading -->
+      <!-- End Heading -->
 
-    <!-- Start Tabs -->
+      <!-- Start Tabs -->
 
-    <div class="tabs">
-      <v-tabs v-model="tab" align-tabs="center" class="mb-4">
-        <v-tab :value="1" class="">التقارير</v-tab>
-        <v-tab :value="2">ادارت المنتجات</v-tab>
-        <v-tab :value="3">الربط مع الانظمة الاخرى</v-tab>
-        <v-tab :value="4">ادارة المخازن</v-tab>
-      </v-tabs>
+      <div class="tabs">
+        <v-tabs v-model="tab" align-tabs="center" class="mb-4">
+          <v-tab :value="1" class="">التقارير</v-tab>
+          <v-tab :value="2">ادارت المنتجات</v-tab>
+          <v-tab :value="3">الربط مع الانظمة الاخرى</v-tab>
+          <v-tab :value="4">ادارة المخازن</v-tab>
+        </v-tabs>
+      </div>
+    </div>
+
+    <div class="cards">
       <v-card>
         <v-window v-model="tab" class="window">
           <v-window-item v-for="n in 4" :key="n" :value="n">
             <v-container fluid>
-              <v-row v-for="report in reports">
+              <v-row v-for="report in reports" class="card-row mb-5">
                 <VCol cols="12" lg="6" md="6" sm="12">
                   <div class="d-flex" style="flex-direction: column">
                     <h6 class="">التقارير</h6>
@@ -75,6 +80,14 @@ const mainPargraph =
 </template>
 
 <style lang="scss">
+.properties .cards {
+  background-image: url('@/assets/images/reports.svg') !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  block-size: 100%;
+  inline-size: 100%;
+}
+
 .properties .v-slide-group__content {
   gap: 6px;
 }
@@ -100,7 +113,11 @@ const mainPargraph =
   display: none !important;
 }
 
-.properties .tabs .window {
+.properties .cards .v-row {
+  padding: 33px;
+}
+
+.properties .cards .window {
   .v-row:nth-child(2) {
     flex-direction: row-reverse;
   }
@@ -136,5 +153,25 @@ const mainPargraph =
 
 .v-card--variant-elevated {
   box-shadow: none !important;
+}
+
+.properties .card-row {
+  border-radius: 58px;
+  background: #fff;
+}
+
+.v-container--fluid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-inline-size: 90%;
+}
+
+.properties .report-header {
+  background-image: url('@/assets/images/reportHeader.svg') !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  block-size: 100%;
+  inline-size: 100%;
 }
 </style>

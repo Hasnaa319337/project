@@ -81,41 +81,40 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
     class="layout-wrapper"
     :class="layoutClasses(windowWidth, windowScrollY)"
   >
-    <div
-      class="layout-navbar-and-nav-container d-flex"
-      :class="isNavbarBlurEnabled && 'header-blur'"
-    >
-      <!-- 👉 Navbar -->
-      <div class="layout-navbar">
-        <div class="navbar-content-container">
-          <slot name="navbar" />
-        </div>
-      </div>
-
-      <!-- 👉 Navigation -->
-      <div class="layout-horizontal-nav">
-        <div class="horizontal-nav-content-container">
-          <HorizontalNav :nav-items="navItems" />
-        </div>
-      </div>
-
-      <!-- Buttons -->
-      <div class="layout-navbar">
-        <div class="navbar-content-container d-flex align-center gap-3">
-          <!-- <AppBarSearch/> -->
-          <div class="searchIcon" style="color: #000 !important">
-            <VIcon icon="mdi-magnify" />
-          </div>
-          <NavBarI18n class="mx-1" />
-          <MainButton
-            :content="buttoncontent"
-            class="headerButton d-flex align-center"
-          />
-        </div>
-      </div>
-    </div>
-
     <main class="layout-page-content">
+      <div
+        class="layout-navbar-and-nav-container d-flex"
+        :class="isNavbarBlurEnabled && 'header-blur'"
+      >
+        <!-- 👉 Navbar -->
+        <div class="layout-navbar">
+          <div class="navbar-content-container">
+            <slot name="navbar" />
+          </div>
+        </div>
+
+        <!-- 👉 Navigation -->
+        <div class="layout-horizontal-nav">
+          <div class="horizontal-nav-content-container">
+            <HorizontalNav :nav-items="navItems" />
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="layout-navbar">
+          <div class="navbar-content-container d-flex align-center gap-3">
+            <!-- <AppBarSearch/> -->
+            <div class="searchIcon" style="color: #000 !important">
+              <VIcon icon="mdi-magnify" />
+            </div>
+            <NavBarI18n class="mx-1" />
+            <MainButton
+              :content="buttoncontent"
+              class="headerButton d-flex align-center"
+            />
+          </div>
+        </div>
+      </div>
       <template v-if="$slots['content-loading']">
         <template v-if="shallShowPageLoading">
           <slot name="content-loading" />
