@@ -23,9 +23,21 @@ const props = defineProps<Props>()
 <style lang="scss" scoped>
 .heading {
   flex-direction: column;
-  gap: 25px;
   inline-size: 50%;
   margin-block-end: 20px;
   margin-block-start: 40px;
+}
+
+// Responsive Style
+
+@media (max-width: 600px) {
+  .subtitle {
+    font-size: 30px;
+  }
+
+  .mainPargraph {
+    font-size: 14px;
+    margin-block-end: 25px;
+  }
 }
 </style>

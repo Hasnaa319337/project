@@ -18,7 +18,9 @@ const mainPargraph =
       <!-- End Heading -->
 
       <!-- Start:: Blogs -->
-      <BlogCard />
+      <VContainer>
+        <BlogCard />
+      </VContainer>
 
       <!-- End:: Blogs -->
     </div>

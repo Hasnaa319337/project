@@ -91,21 +91,25 @@ const iconStyle = (color) => {
 
 <style lang="scss">
 .contact {
+  margin-block-start: 82px;
+
   .card-title {
     display: block;
     color: #000;
+    font-family: Cairo-Bold;
     font-size: 24px;
     font-weight: 700;
     line-height: 44.98px;
-    margin-block-end: 10px;
+    margin-block-end: 17px;
 
     // margin-inline-start: 10px;
   }
 
   .single-contact {
-    padding: 5px;
-    border: 1px solid #b2d3e2;
+    padding: 17px;
+    border: 1px solid #157d99;
     border-radius: 48px;
+    block-size: 85%;
     inline-size: 100%;
 
     .contact-form,
@@ -114,17 +118,24 @@ const iconStyle = (color) => {
       flex-direction: column;
       padding: 5px;
       gap: 14px;
-      margin-block-start: 10px;
+
+      input {
+        border-radius: 30px !important;
+      }
+
+      textarea {
+        border-radius: 32px !important;
+        block-size: 104px;
+      }
 
       input,
       textarea {
         border: none;
-        border-radius: 30px !important;
         background-color: #f3f8f9;
         block-size: 60px !important;
         outline: 0;
-        padding-block: 5px;
-        padding-inline: 22px;
+        padding-block: 17px;
+        padding-inline: 33px;
 
         &::placeholder {
           color: #000;
@@ -152,7 +163,13 @@ const iconStyle = (color) => {
           border-radius: 27.5px;
           margin: 0;
           block-size: 100%;
+          font-family: Cairo;
+          font-family: Cairo-Bold;
+          font-size: 14px;
+          font-weight: 700;
           inline-size: 100%;
+          line-height: 26.24px;
+          text-align: center;
         }
       }
     }
@@ -163,7 +180,7 @@ const iconStyle = (color) => {
       background-color: #f3f8f9;
       gap: 10px;
       padding-block: 16px 0;
-      padding-inline: 27px;
+      padding-inline-start: 33px;
 
       .iconDiv {
         display: flex;
@@ -177,6 +194,7 @@ const iconStyle = (color) => {
       .info {
         h6 {
           color: #000;
+          font-family: Cairo-Bold;
           font-size: 20px;
           font-weight: 700;
           line-height: 37.48px;
@@ -184,6 +202,7 @@ const iconStyle = (color) => {
 
         p {
           color: #000;
+          font-family: Cairo-Medium;
           font-size: 16px;
           font-weight: 500;
           line-height: 29.98px;
@@ -216,6 +235,7 @@ const iconStyle = (color) => {
       inset-block-start: 0;
       inset-block-start: 3px !important;
       inset-inline-start: 22px;
+      margin-inline-start: 13px;
       pointer-events: none;
       transition: all 0.3s ease;
     }
@@ -232,6 +252,32 @@ const iconStyle = (color) => {
 
     .input-field:focus::placeholder {
       color: transparent !important;
+    }
+  }
+}
+
+// Responsive Style
+
+@media (max-width: 600px) {
+  .card-title {
+    font-size: 20px !important;
+  }
+
+  .contact .single-contact .input-field {
+    font-size: 16px !important;
+  }
+
+  .contact .single-contact .input-label {
+    font-size: 13px !important;
+  }
+
+  .info {
+    h6 {
+      font-size: 18px !important;
+    }
+
+    p {
+      font-size: 14px !important;
     }
   }
 }

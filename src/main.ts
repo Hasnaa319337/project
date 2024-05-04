@@ -26,10 +26,19 @@ loadFonts()
 import Carousel from 'primevue/carousel'
 import PrimeVue from 'primevue/config'
 
+import TabPanel from 'primevue/tabpanel'
+import TabView from 'primevue/tabview'
+
 import 'primeflex/primeflex.css'
 import 'primeicons/primeicons.css'
 import 'primevue/resources/primevue.min.css' /* Deprecated */
 import 'primevue/resources/themes/aura-light-green/theme.css'
+
+// animation
+import AOS from 'aos'
+import 'aos/dist/aos.css' // You can also use <link> for styles
+// ..
+AOS.init()
 
 // Create vue app
 const app = createApp(App)
@@ -44,6 +53,8 @@ app.use(Vue3Toasity, {
 // PrimeVue
 app.use(PrimeVue)
 app.component('Carousel', Carousel)
+app.component('TabView', TabView)
+app.component('TabPanel', TabPanel)
 
 // Use plugins
 loadFonts()

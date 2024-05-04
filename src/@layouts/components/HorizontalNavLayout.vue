@@ -192,25 +192,19 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
           <VCol cols="12" md="4" sm="12">
             <div>
               <h3>بيانات التواصل</h3>
-              <div style="margin-block-start: 22px">
-                <VRow v-for="contact in contactInfos" class="contactInfos">
-                  <VCol cols="12" md="3" sm="3">
-                    <div class="iconDiv" :style="iconStyle(contact.color)">
-                      <img :src="contact.icon" />
-                    </div>
-                  </VCol>
+              <div style="margin-block-start: 39px">
+                <VRow
+                  v-for="contact in contactInfos"
+                  class="contactInfos"
+                  style="gap: 8px; margin-block-end: 25px"
+                >
+                  <div class="iconDiv" :style="iconStyle(contact.color)">
+                    <img :src="contact.icon" />
+                  </div>
 
-                  <VCol
-                    cols="12"
-                    md="9"
-                    sm="9"
-                    style="padding: 12px 0"
-                    class="d-flex align-center"
-                  >
-                    <div class="info">
-                      <p>{{ contact.value }}</p>
-                    </div>
-                  </VCol>
+                  <div class="info">
+                    <p>{{ contact.value }}</p>
+                  </div>
                 </VRow>
               </div>
             </div>
@@ -322,7 +316,9 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
 
 .footer {
   background: #f3f8f9;
-  padding-block-start: 85px;
+  margin-block-start: 130px;
+  padding-block-end: 55px;
+  padding-block-start: 70px;
 
   .v-list,
   .v-list-item,
@@ -333,10 +329,12 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
   .content {
     p {
       color: #000;
+      font-family: Cairo-Light;
       font-size: 16px;
       font-weight: 300;
       inline-size: 70%;
       line-height: 29.98px;
+      margin-block-end: 0;
       margin-block-start: 15px;
       text-align: justify;
     }
@@ -351,12 +349,15 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
 
       .v-list-item {
         background: transparent !important;
+        padding-inline-end: 2px;
 
         svg {
           background: transparent !important;
+          block-size: 21px !important;
           color: #000;
           font-size: 16px;
           font-weight: 400;
+          inline-size: 19px !important;
           line-height: 20px;
           transition: 0.3s all ease-in-out;
 
@@ -374,8 +375,16 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
     display: flex;
     flex-wrap: wrap;
 
+    .v-list {
+      margin-block-start: 13px;
+    }
+
     .column {
       flex: 1;
+
+      .v-list-item {
+        padding-block-end: 0 !important;
+      }
     }
 
     .headers {
@@ -385,6 +394,7 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
       span,
       svg {
         color: #000;
+        font-family: Cairo-Light;
         font-size: 16px !important;
         font-weight: 300;
         line-height: 29.98px;
@@ -393,6 +403,15 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
   }
 
   .contactInfos {
+    .iconDiv {
+      block-size: 34.19px;
+      inline-size: 34.19px;
+
+      img {
+        inline-size: 55%;
+      }
+    }
+
     .info {
       h6 {
         color: #000 !important;
@@ -404,6 +423,7 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
       p {
         margin: 0;
         color: #000;
+        font-family: Cairo-Medium;
         font-size: 16px;
         font-weight: 500;
         line-height: 29.98px;

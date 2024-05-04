@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import PackageCard from '../packages/PackageCard.vue'
+import PackagesCarousel from '../packages/PackagesCarousel.vue'
 const subtitle = 'الباقات'
 const mainPargraph =
   '      نظام POS متعدد الاستخدامات الخاص بنا هو الحل الأمثل لإدارة أعمالك بكفاءة ومرونة. سواء كنت تدير مطعماً، متجراً للبيع بالتجزئة.'
@@ -12,7 +12,7 @@ const items = ref([
 const packages = ref([
   {
     title: 'بلاس',
-    price: '2500',
+    price: '2500.000',
     tax: '+354',
     recommanded: false,
     advantages: [
@@ -25,7 +25,7 @@ const packages = ref([
   },
   {
     title: 'بريميوم',
-    price: '2500',
+    price: '2500.000',
     tax: '+354',
     recommanded: true,
     advantages: [
@@ -38,7 +38,7 @@ const packages = ref([
   },
   {
     title: 'بلاس',
-    price: '2500',
+    price: '2500.000',
     tax: '+354',
     recommanded: false,
     advantages: [
@@ -53,52 +53,61 @@ const packages = ref([
 </script>
 
 <template>
-  <div
-    class="d-flex justify-center align-center packages"
-    style="flex-direction: column"
-  >
-    <!-- Start Heading -->
+  <div class="packages">
+    <VContainer>
+      <div
+        class="d-flex justify-center align-center"
+        style="flex-direction: column"
+      >
+        <!-- Start Heading -->
 
-    <AppHeading :subtitle="subtitle" :mainPargraph="mainPargraph" />
+        <AppHeading :subtitle="subtitle" :mainPargraph="mainPargraph" />
+      </div>
 
-    <!-- End Heading -->
+      <!-- End Heading -->
 
-    <!-- Start:: Packages -->
-    <v-tabs v-model="tab" bg-color="transparent" color="basil" grow>
-      <v-tab v-for="(item, index) in items" :key="item.value" :value="index">
-        {{ item.title }}
-      </v-tab>
-    </v-tabs>
+      <!-- Start:: Packages -->
+      <v-tabs v-model="tab" bg-color="transparent" color="basil" grow>
+        <v-tab v-for="(item, index) in items" :key="item.value" :value="index">
+          {{ item.title }}
+        </v-tab>
+      </v-tabs>
 
-    <v-card>
-      <v-window v-model="tab" class="window">
-        <v-window-item class="row d-flex">
-          <VCol
-            v-for="pack in packages"
-            flat
-            class="package-card"
-            cols="12"
-            lg="6"
-            md="6"
-            sm="12"
-          >
-            <PackageCard :package="pack" />
-          </VCol>
-        </v-window-item>
-      </v-window>
+      <v-card>
+        <v-window v-model="tab" class="window">
+          <v-window-item>
+            <!-- <PackageCard      v-for="pack in packages" :package="pack" /> -->
+            <PackagesCarousel :packages="packages" />
+          </v-window-item>
+        </v-window>
 
-      <!-- End:: Packages -->
-    </v-card>
+        <!-- End:: Packages -->
+      </v-card>
+    </VContainer>
   </div>
 </template>
 
 <style lang="scss">
+.packages {
+  margin-block-start: 74px;
+}
+
+.packages .heading {
+  margin-block-end: -6px;
+}
+
+.packages .v-slide-group__container {
+  justify-content: center;
+  margin-block-end: 20px;
+}
+
 .packages .v-slide-group__content {
+  flex: 0;
   padding: 6px;
   border: 1px solid #70a1e5;
   border-radius: 27.5px !important;
   block-size: 53px !important;
-  gap: 2px;
+  gap: 10px;
 }
 
 .packages .v-tab.v-tab {
@@ -179,7 +188,7 @@ const packages = ref([
 }
 
 .package-card {
-  flex: 1;
+  // flex: 1;
   margin: 16px;
 }
 

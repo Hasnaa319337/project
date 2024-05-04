@@ -1,6 +1,62 @@
+@font-face {
+  font-family: Cairo-Bold;
+  src: local('Cairo'), url(@/assets/fonts/Cairo-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: Cairo-Light;
+  src: local('Cairo'), url(@/assets/fonts/Cairo-Light.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: Cairo-SemiBold;
+  src: local('Cairo'), url(@/assets/fonts/Cairo-SemiBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: Cairo-Regular;
+  src: local('Cairo'), url(@/assets/fonts/Cairo-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: Cairo-Medium;
+  src: local('Cairo'), url(@/assets/fonts/Cairo-Medium.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: Cairo-ExtraBold;
+  src: local('Cairo'),
+    url(@/assets/fonts/Cairo-ExtraBold.ttf) format('truetype');
+}
+
+* {
+  transition: background 0.4s linear, color 0.4s linear;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+body::-webkit-scrollbar {
+  inline-size: 11px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgb(231, 231, 231); /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 20px; /* roundness of the scroll thumb */
+  background: linear-gradient(90deg, #157d99 0%, #70a1e5 100%) !important;
+  block-size: 50px;
+
+  /* border: 3px solid orange;  creates padding around scroll thumb */
+}
+
 .mainHeading {
   color: #000;
   font-family: Cairo !important;
+  font-family: Cairo-Bold;
   font-weight: 700;
   letter-spacing: 0.01em;
   line-height: 89.95px;
@@ -9,6 +65,7 @@
 
 .subtitle {
   color: #000;
+  font-family: Cairo-Bold;
   font-size: 36px;
   font-weight: 700;
   letter-spacing: 0.01em;
@@ -18,9 +75,11 @@
 
 .mainPargraph {
   color: #000;
+  font-family: Cairo-Medium;
   font-size: 20px;
   font-weight: 500;
   line-height: 37.48px;
+  margin-block-end: 33px;
   text-align: center;
 }
 
@@ -96,4 +155,10 @@ body {
 .layout-page-content {
   padding: 0 !important;
   margin: 0 !important;
+}
+
+@media (min-width: 1280px) {
+  .v-container {
+    max-inline-size: 1371px;
+  }
 }

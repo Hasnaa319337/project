@@ -11,6 +11,24 @@ const items = [
   { title: 'نظام POS متعدد الاستخدامات الخاص', icon: ' mdi-check' },
 ]
 const reports = [{ image: tab1 }, { image: tab2 }, { image: tab3 }]
+const tabs = [
+  {
+    title: 'التقارير',
+    value: '1',
+  },
+  {
+    title: 'ادارت المنتجات',
+    value: '2',
+  },
+  {
+    title: 'الربط مع الانظمة الاخرى',
+    value: '3',
+  },
+  {
+    title: 'ادارة المخازن',
+    value: '4',
+  },
+]
 
 const subtitle = 'اهم الخصائص'
 const mainPargraph =
@@ -26,19 +44,19 @@ const mainPargraph =
       <!-- Start Heading -->
 
       <AppHeading :subtitle="subtitle" :mainPargraph="mainPargraph" />
+    </div>
 
-      <!-- End Heading -->
+    <!-- End Heading -->
 
-      <!-- Start Tabs -->
+    <!-- Start Tabs -->
 
-      <div class="tabs">
-        <v-tabs v-model="tab" align-tabs="center" class="mb-4">
-          <v-tab :value="1" class="">التقارير</v-tab>
-          <v-tab :value="2">ادارت المنتجات</v-tab>
-          <v-tab :value="3">الربط مع الانظمة الاخرى</v-tab>
-          <v-tab :value="4">ادارة المخازن</v-tab>
-        </v-tabs>
-      </div>
+    <div class="tabs d-flex justify-center align-center">
+      <v-tabs v-model="tab" show-arrows class="mb-4">
+        <v-tab :value="1" class="">التقارير</v-tab>
+        <v-tab :value="2">ادارت المنتجات</v-tab>
+        <v-tab :value="3">الربط مع الانظمة الاخرى</v-tab>
+        <v-tab :value="4">ادارة المخازن</v-tab>
+      </v-tabs>
     </div>
 
     <div class="cards">
@@ -131,8 +149,10 @@ const mainPargraph =
 
   p {
     color: #000;
+    font-family: Cairo-Medium;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 500 !important;
+    inline-size: 80%;
     letter-spacing: 0.01em;
     line-height: 29.98px;
   }
@@ -143,11 +163,18 @@ const mainPargraph =
     font-weight: 300;
     letter-spacing: 0.01em;
     line-height: 29.98px;
+    padding-block: 0;
+    padding-inline: 24px;
     text-align: center;
   }
 
+  svg {
+    color: #000;
+    inline-size: 21px;
+  }
+
   img {
-    inline-size: 80%;
+    inline-size: 100%;
   }
 }
 

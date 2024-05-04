@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useTheme } from 'vuetify'
 import ScrollToTop from '@core/components/ScrollToTop.vue'
 import { useThemeConfig } from '@core/composable/useThemeConfig'
 import { hexToRgb } from '@layouts/utils'
+import { useTheme } from 'vuetify'
 
 const {
   syncInitialLoaderTheme,
@@ -27,6 +27,19 @@ handleSkinChanges()
         global.current.value.colors.primary
       )}`"
     >
+      <!-- 
+
+
+
+          data-aos="fade-in"
+        data-aos-offset="200"
+        data-aos-delay="100"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top-center"
+     -->
       <RouterView />
       <ScrollToTop />
     </VApp>
