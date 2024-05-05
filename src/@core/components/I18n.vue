@@ -35,7 +35,7 @@ watch(locale, (val) => {
       src="https://img.icons8.com/emoji/48/united-kingdom-emoji.png"
       alt="united-kingdom-emoji"
     /> -->
-    English
+    ENGLISH
   </button>
   <button v-else @click=";(locale = 'ar'), $emit('change', 'ar')" class="mt-1">
     <!-- <img
@@ -44,13 +44,15 @@ watch(locale, (val) => {
       src="https://img.icons8.com/color/48/saudi-arabia.png"
       alt="saudi-arabia"
     /> -->
-    Arabic
+    ARABIC
   </button>
 </template>
 
 <style lang="scss" scoped>
 button {
+  margin: 0 !important;
   color: #000;
+  font-family: Cairo-Regular;
   font-size: 16px;
   font-weight: 400;
   line-height: 29.98px;

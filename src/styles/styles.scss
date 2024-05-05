@@ -97,14 +97,16 @@ body::-webkit-scrollbar-thumb {
 
 .layout-horizontal-nav {
   .horizontal-nav-content-container {
-    display: flex;
-    align-items: center;
-
     .nav-link {
       color: #000 !important;
+      font-family: Cairo-Medium;
       font-size: 16px;
       font-weight: 500 !important;
       line-height: 29.98px;
+    }
+
+    a {
+      padding-inline: 10px;
     }
 
     .router-link-active {
@@ -117,14 +119,22 @@ body::-webkit-scrollbar-thumb {
 }
 
 .layout-navbar-and-nav-container {
+  align-items: center;
+  justify-content: space-between;
   border-radius: 50px;
   margin: auto;
   block-size: 79px;
   inline-size: 90%;
   margin-block-end: 50px;
   margin-block-start: 20px;
+  padding-block-end: 5px;
   padding-block-start: 5px;
-  padding-inline-start: 55px;
+  padding-inline-end: 18px;
+  padding-inline-start: 18px;
+
+  .navbar-content-container {
+    margin-block-end: 5px;
+  }
 }
 
 .layout-navbar {
@@ -132,7 +142,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .layout-vertical-nav {
-  display: none !important;
+  // display: none !important;
 }
 
 .iconDiv {
@@ -160,5 +170,43 @@ body {
 @media (min-width: 1280px) {
   .v-container {
     max-inline-size: 1371px;
+  }
+}
+
+.layout-nav-type-vertical .layout-vertical-nav {
+  .nav-link {
+    color: #000 !important;
+    font-family: Cairo-Medium;
+    font-size: 16px;
+    font-weight: 500 !important;
+    line-height: 29.98px;
+  }
+
+  a {
+    padding-inline: 10px;
+  }
+
+  .router-link-active {
+    background: none;
+    color: #157d99 !important;
+    font-size: 16px;
+    font-weight: 500 !important;
+    line-height: 29.98px;
+  }
+}
+
+.layout-nav-type-vertical
+  .layout-vertical-nav
+  .nav-link
+  > .router-link-exact-active {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.VerticalButton {
+  button {
+    padding: 0 !important;
+    margin-block-start: 11px;
+    margin-inline-start: 20px;
   }
 }

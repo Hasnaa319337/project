@@ -16,6 +16,7 @@ import type {
 import type { Component } from 'vue'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { VNodeRenderer } from './VNodeRenderer'
+const buttoncontent = 'انضم الينا'
 
 interface Props {
   tag?: string | Component
@@ -96,7 +97,7 @@ onUpdated(() => {
     ]"
   >
     <!-- 👉 Header -->
-    <div class="nav-header p-0 m-0" style="padding: 0 !important">
+    <div class="nav-header p-0 m-0" style="padding: 0 13px !important">
       <slot name="nav-header">
         <RouterLink
           to="/"
@@ -113,7 +114,7 @@ onUpdated(() => {
               v-show="!hideTitleAndIcon"
               class="leading-normal text-l font-weight-bold text-capitalize"
             >
-              {{ lang === 'ar' ? 'واتساب ابلوكسا' : config.app.title }}
+              {{ config.app.title }}
             </h1>
           </Transition>
         </RouterLink>
@@ -165,6 +166,9 @@ onUpdated(() => {
           :key="index"
           :item="item"
         />
+        <div class="nav-link VerticalButton">
+          <MainButton :content="buttoncontent" class="headerButton" />
+        </div>
       </PerfectScrollbar>
     </slot>
   </Component>

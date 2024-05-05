@@ -104,10 +104,13 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
         <div class="layout-navbar">
           <div class="navbar-content-container d-flex align-center gap-3">
             <!-- <AppBarSearch/> -->
-            <div class="searchIcon" style="color: #000 !important">
-              <VIcon icon="mdi-magnify" />
+            <div
+              class="searchIcon"
+              style="color: #000 !important; margin-block-start: 8px"
+            >
+              <img src="@/assets/images/search.svg" />
             </div>
-            <NavBarI18n class="mx-1" />
+            <NavBarI18n class="mx-1" style="padding-inline-end: 20px" />
             <MainButton
               :content="buttoncontent"
               class="headerButton d-flex align-center"
@@ -440,7 +443,16 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
 }
 
 .headerButton {
+  block-size: 47px;
+  inline-size: 144px;
+
   button {
+    block-size: 100% !important;
+    font-family: Cairo-Bold;
+    font-size: 14px;
+    font-weight: 700;
+    inline-size: 100% !important;
+    line-height: 18.7px;
     margin-block-end: 0 !important;
   }
 }
