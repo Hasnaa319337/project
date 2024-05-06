@@ -10,9 +10,9 @@ import PropertiesComponent from '../components/MainComponents/propertiesComponen
 
 <template>
   <div class="home">
-    <VContainer>
-      <HeroComponent />
-    </VContainer>
+    <!-- <VContainer> -->
+    <HeroComponent />
+    <!-- </VContainer> -->
     <PropertiesComponent />
     <SystemTerminology />
     <div class="both">
