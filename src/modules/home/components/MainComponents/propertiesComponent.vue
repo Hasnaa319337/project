@@ -5,10 +5,10 @@ import tab2 from '@/assets/images/tab2.svg'
 import tab3 from '@/assets/images/tab3.svg'
 
 const items = [
-  { title: 'نظام POS متعدد الاستخدامات الخاص', icon: ' mdi-check' },
-  { title: 'الحل الأمثل لإدارة أعمالك بكفاءة ومرونة', icon: ' mdi-check' },
-  { title: 'نظام POS متعدد الاستخدامات الخاص', icon: ' mdi-check' },
-  { title: 'نظام POS متعدد الاستخدامات الخاص', icon: ' mdi-check' },
+  { title: 'نظام POS متعدد الاستخدامات الخاص' },
+  { title: 'الحل الأمثل لإدارة أعمالك بكفاءة ومرونة' },
+  { title: 'نظام POS متعدد الاستخدامات الخاص' },
+  { title: 'نظام POS متعدد الاستخدامات الخاص' },
 ]
 const reports = [{ image: tab1 }, { image: tab2 }, { image: tab3 }]
 const tabs = [
@@ -44,20 +44,20 @@ const mainPargraph =
       <!-- Start Heading -->
 
       <AppHeading :subtitle="subtitle" :mainPargraph="mainPargraph" />
+
+      <div class="tabs d-flex justify-center align-center">
+        <v-tabs v-model="tab" show-arrows class="mb-4">
+          <v-tab :value="1" class="">التقارير</v-tab>
+          <v-tab :value="2">ادارت المنتجات</v-tab>
+          <v-tab :value="3">الربط مع الانظمة الاخرى</v-tab>
+          <v-tab :value="4">ادارة المخازن</v-tab>
+        </v-tabs>
+      </div>
     </div>
 
     <!-- End Heading -->
 
     <!-- Start Tabs -->
-
-    <div class="tabs d-flex justify-center align-center">
-      <v-tabs v-model="tab" show-arrows class="mb-4">
-        <v-tab :value="1" class="">التقارير</v-tab>
-        <v-tab :value="2">ادارت المنتجات</v-tab>
-        <v-tab :value="3">الربط مع الانظمة الاخرى</v-tab>
-        <v-tab :value="4">ادارة المخازن</v-tab>
-      </v-tabs>
-    </div>
 
     <div class="cards">
       <v-card>
@@ -66,7 +66,7 @@ const mainPargraph =
             <v-container fluid>
               <v-row v-for="report in reports" class="card-row mb-5">
                 <VCol cols="12" lg="6" md="6" sm="12">
-                  <div class="d-flex" style="flex-direction: column">
+                  <div class="d-flex contain" style="flex-direction: column">
                     <h6 class="">التقارير</h6>
                     <p>
                       نظام POS متعدد الاستخدامات الخاص بنا هو الحل الأمثل لإدارة
@@ -75,8 +75,10 @@ const mainPargraph =
                     </p>
                     <VList>
                       <VListItem v-for="item in items">
-                        <div class="d-flex">
-                          <VIcon :icon="item.icon" />
+                        <div class="d-flex item">
+                          <div class="item-image">
+                            <img src="@/assets/images/check-icon.svg" />
+                          </div>
                           <span>{{ item.title }}</span>
                         </div>
                       </VListItem>
@@ -98,93 +100,134 @@ const mainPargraph =
 </template>
 
 <style lang="scss">
-.properties .cards {
-  background-image: url('@/assets/images/reports.svg') !important;
-  background-repeat: no-repeat;
-  background-size: cover;
-  block-size: 100%;
-  inline-size: 100%;
-}
+.properties {
+  margin-block-start: 150px;
 
-.properties .v-slide-group__content {
-  gap: 6px;
-}
-
-.properties .v-tab.v-tab {
-  border: 1px solid #70a1e5;
-  border-radius: 24px !important;
-  background: transparent !important;
-  color: #000 !important;
-  font-size: 14px !important;
-  font-weight: 700 !important;
-  padding-block: 11px !important;
-  padding-inline: 42px !important;
-  text-align: center !important;
-}
-
-.properties .v-tab.v-tab--selected {
-  background: linear-gradient(90deg, #157d99 0%, #70a1e5 100%) !important;
-  color: #fff !important;
-}
-
-.properties .v-tab__slider {
-  display: none !important;
-}
-
-.properties .cards .v-row {
-  padding: 33px;
-}
-
-.properties .cards .window {
-  .v-row:nth-child(2) {
-    flex-direction: row-reverse;
-  }
-
-  h6 {
-    color: #1c1c1c;
-    font-size: 32px;
-    font-weight: 500;
-    line-height: 59.97px;
-  }
-
-  p {
-    color: #000;
-    font-family: Cairo-Medium;
-    font-size: 16px;
-    font-weight: 500 !important;
-    inline-size: 80%;
-    letter-spacing: 0.01em;
-    line-height: 29.98px;
-  }
-
-  span {
-    color: #000;
-    font-size: 16px;
-    font-weight: 300;
-    letter-spacing: 0.01em;
-    line-height: 29.98px;
-    padding-block: 0;
-    padding-inline: 24px;
-    text-align: center;
-  }
-
-  svg {
-    color: #000;
-    inline-size: 21px;
-  }
-
-  img {
+  .cards {
+    background-image: url('@/assets/images/reports.svg') !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    block-size: 100%;
     inline-size: 100%;
   }
-}
 
-.v-card--variant-elevated {
-  box-shadow: none !important;
-}
+  .v-slide-group {
+    margin-block-end: 48px !important;
+  }
 
-.properties .card-row {
-  border-radius: 58px;
-  background: #fff;
+  .v-slide-group__content {
+    gap: 19px;
+  }
+
+  .v-tab.v-tab {
+    border: 1px solid #70a1e5;
+    border-radius: 27.5px !important;
+    background: transparent !important;
+    block-size: 55px;
+    color: #000 !important;
+    font-family: Cairo-Bold;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    inline-size: 203px;
+    line-height: 26.24px;
+    padding-block: 11px !important;
+    padding-inline: 42px !important;
+    text-align: center !important;
+  }
+
+  .v-tab.v-tab--selected {
+    background: linear-gradient(90deg, #157d99 0%, #70a1e5 100%) !important;
+    color: #fff !important;
+  }
+
+  .v-tab__slider {
+    display: none !important;
+  }
+
+  .cards .v-row {
+    padding: 33px;
+  }
+
+  .cards .window {
+    .v-row:nth-child(2) {
+      flex-direction: row-reverse;
+
+      .contain {
+        margin-inline-start: 48px;
+      }
+    }
+
+    h6 {
+      color: #1c1c1c;
+      font-family: Cairo-SemiBold;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 59.97px;
+      margin-block-end: 17px;
+    }
+
+    p {
+      color: #000;
+      font-family: Cairo-Medium;
+      font-size: 16px;
+      font-weight: 500 !important;
+      inline-size: 80%;
+      letter-spacing: 0.01em;
+      line-height: 29.98px;
+      margin-block-end: 0;
+    }
+
+    .v-list {
+      margin-block-end: 48px !important;
+
+      .v-list-item {
+        padding-inline: 0;
+
+        span {
+          color: #000;
+          font-family: Cairo-Light;
+          font-size: 16px;
+          font-weight: 300;
+          letter-spacing: 0.01em;
+          line-height: 29.98px;
+          padding-block: 0;
+          padding-inline: 24px;
+          text-align: center;
+        }
+
+        .item-image {
+          block-size: 14.55px;
+          inline-size: 14.55px;
+          margin-block-start: 5px;
+
+          img {
+            inline-size: 100%;
+          }
+        }
+      }
+    }
+
+    img {
+      inline-size: 100%;
+    }
+  }
+
+  .v-card--variant-elevated {
+    box-shadow: none !important;
+  }
+
+  .card-row {
+    border-radius: 58px;
+    background: #fff;
+  }
+
+  .report-header {
+    background-image: url('@/assets/images/reportHeader.svg') !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    block-size: 100%;
+    inline-size: 100%;
+  }
 }
 
 .v-container--fluid {
@@ -194,11 +237,27 @@ const mainPargraph =
   max-inline-size: 90%;
 }
 
-.properties .report-header {
-  background-image: url('@/assets/images/reportHeader.svg') !important;
-  background-repeat: no-repeat;
-  background-size: cover;
-  block-size: 100%;
-  inline-size: 100%;
+.v-tabs--density-default {
+  block-size: auto !important;
+}
+
+@media (max-width: 787px) {
+  .properties .v-slide-group__content {
+    flex-direction: column;
+  }
+
+  .properties .cards .v-row {
+    margin-block-end: 5px;
+    padding-block-start: 0 !important;
+  }
+
+  .properties .cards .window p {
+    inline-size: 100%;
+  }
+
+  .properties .cards .window .v-list .v-list-item span {
+    padding-inline: 10px;
+    text-align: start;
+  }
 }
 </style>

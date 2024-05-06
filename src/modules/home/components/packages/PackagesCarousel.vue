@@ -3,7 +3,7 @@
     <Carousel
       :breakpoints="breakpoints"
       :wrap-around="true"
-      :autoplay="1"
+      :autoplay="0"
       :transition="3000"
       dir="rtl"
     >

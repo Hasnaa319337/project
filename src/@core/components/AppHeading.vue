@@ -20,7 +20,7 @@ const props = defineProps<Props>()
   <!-- End Heading -->
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .heading {
   flex-direction: column;
   inline-size: 50%;
@@ -30,7 +30,12 @@ const props = defineProps<Props>()
 
 // Responsive Style
 
-@media (max-width: 600px) {
+@media (max-width: 787px) {
+  .heading {
+    flex-direction: column;
+    inline-size: 65% !important;
+  }
+
   .subtitle {
     font-size: 30px;
   }

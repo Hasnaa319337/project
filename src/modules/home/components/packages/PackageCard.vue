@@ -30,7 +30,9 @@ const props = defineProps<Props>()
 
       <VList>
         <VListItem v-for="item in $props.package.advantages">
-          <VIcon icon="mdi-check" />
+          <div class="item-image">
+            <img src="@/assets/images/check-icon.svg" />
+          </div>
           <span>{{ item }}</span>
         </VListItem>
       </VList>
@@ -96,6 +98,7 @@ const props = defineProps<Props>()
       margin-block-end: 10px;
 
       span {
+        display: inline-block;
         font-family: Cairo-Light;
         font-size: 20px;
         font-weight: 300;
@@ -136,21 +139,22 @@ const props = defineProps<Props>()
     font-weight: 500;
     line-height: 29.98px;
 
-    svg {
-      background-color: transparent !important;
+    .item-image {
+      block-size: 14.55px;
+      inline-size: 14.55px;
 
-      // block-size: 18px !important;
-      color: #000 !important;
-      font-family: Cairo-Light;
-      font-size: 16px;
-      font-weight: 300 !important;
+      img {
+        inline-size: 100%;
+      }
     }
 
     span {
+      display: inline-block;
       font-family: Cairo-Medium;
       font-size: 16px;
       font-weight: 500;
       line-height: 29.98px;
+      margin-block-start: 6px !important;
       padding-block: 0;
       padding-inline: 14.6px;
     }
@@ -178,5 +182,10 @@ const props = defineProps<Props>()
     line-height: 26.24px;
     text-align: center;
   }
+}
+
+.package-card .v-list-item__content {
+  display: flex;
+  align-items: center;
 }
 </style>
