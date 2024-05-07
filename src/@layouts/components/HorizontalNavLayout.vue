@@ -76,25 +76,20 @@ router.afterEach(() => {
 const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
 
 const handleScroll = () => {
-  // Retrieve elements by class name
   let elements = document.getElementsByClassName(
     'layout-navbar-and-nav-container'
   )
 
-  // Loop through the elements and add class to each
   for (let element of elements) {
     if (window.pageYOffset === 0) {
-      element.style.top = '5px' // Set top margin to 5px when scrolled to top
+      element.style.top = '5px'
     } else {
-      element.style.top = '0' // Reset top margin to 0 when scrolled down
+      element.style.top = '0'
     }
-    element.classList.toggle('nonTop', window.pageYOffset > 0) // Toggle class based on scroll position
+    element.classList.toggle('nonTop', window.pageYOffset > 0)
   }
-
-  console.log('Scrolled')
 }
 
-// Add scroll event listener when component is mounted
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
 })
