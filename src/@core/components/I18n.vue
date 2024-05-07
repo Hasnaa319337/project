@@ -15,6 +15,8 @@ interface Props {
   location?: any
 }
 
+localStorage.setItem('lang', 'ar')
+
 const { locale } = useI18n({ useScope: 'global' })
 let currentLang = ref(localStorage.getItem('lang'))
 watch(locale, (val) => {
