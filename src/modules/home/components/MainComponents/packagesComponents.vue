@@ -76,7 +76,6 @@ const packages = ref([
       <v-card>
         <v-window v-model="tab" class="window">
           <v-window-item>
-            <!-- <PackageCard      v-for="pack in packages" :package="pack" /> -->
             <PackagesCarousel :packages="packages" />
           </v-window-item>
         </v-window>

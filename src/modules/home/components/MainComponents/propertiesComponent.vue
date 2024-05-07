@@ -107,7 +107,7 @@ const mainPargraph =
     background-image: url('@/assets/images/reports.svg') !important;
     background-repeat: no-repeat;
     background-size: cover;
-    block-size: 100%;
+    block-size: 1900px;
     inline-size: 100%;
   }
 
@@ -242,6 +242,14 @@ const mainPargraph =
 }
 
 @media (max-width: 787px) {
+  .properties .cards {
+    background-image: url('@/assets/images/reports.svg') !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    block-size: 100%;
+    inline-size: 100%;
+  }
+
   .properties .v-slide-group__content {
     flex-direction: column;
   }

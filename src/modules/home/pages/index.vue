@@ -13,8 +13,11 @@ import PropertiesComponent from '../components/MainComponents/propertiesComponen
     <!-- <VContainer> -->
     <HeroComponent />
     <!-- </VContainer> -->
-    <PropertiesComponent />
-    <SystemTerminology />
+    <div class="both1">
+      <PropertiesComponent />
+      <SystemTerminology />
+    </div>
+
     <div class="both">
       <AdvantagesComponent />
       <PackagesComponents />
@@ -38,7 +41,7 @@ import PropertiesComponent from '../components/MainComponents/propertiesComponen
   }
 
   .blogs {
-    background-image: url('@/assets/images/blogs.svg') !important;
+    // background-image: url("@/assets/images/blogs.svg") !important;
     background-repeat: no-repeat;
     background-size: cover;
     block-size: 100%;

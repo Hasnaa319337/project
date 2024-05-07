@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import TerminologyCard from '@/modules/home/components/terminology/TerminologyCard.vue'
+import TerminologysCarousel from '../terminology/TerminologysCarousel.vue'
 let activeData = ref(null)
 const subtitle = 'مصطلحات النظام'
 const mainPargraph =
@@ -8,15 +8,47 @@ const mainPargraph =
 const handleActiveItemUpdated = (data) => {
   // Handle the emitted data here
   activeData.value = data
-
-  console.log(activeData.value)
-
-  console.log('Active item data:', data)
 }
+
+import term1 from '@/assets/images/term1.svg'
+
+const Terminologys = ref([
+  {
+    image: term1,
+    title: '1 نص مؤقت',
+
+    text: 'نظام POS متعدد الاستخدامات الخاص بنا هو الحل الأمثل لإدارة أعمالك بكفاءة ومرونة. سواء كنت تدير مطعماً، متجراً للبيع بالتجزئة. نظام POS متعدد الاستخدامات ',
+  },
+  {
+    image: term1,
+    title: '2 نص مؤقت',
+
+    text: 'نظام POS متعدد الاستخدامات الخاص بنا هو الحل الأمثل لإدارة أعمالك بكفاءة ومرونة. سواء كنت تدير مطعماً، متجراً للبيع بالتجزئة. نظام POS متعدد الاستخدامات ',
+  },
+  {
+    image: term1,
+    title: '3 نص مؤقت',
+
+    text: 'نظام POS متعدد الاستخدامات الخاص بنا هو الحل الأمثل لإدارة أعمالك بكفاءة ومرونة. سواء كنت تدير مطعماً، متجراً للبيع بالتجزئة. نظام POS متعدد الاستخدامات ',
+  },
+  {
+    image: term1,
+    title: '4 نص مؤقت',
+
+    text: 'نظام POS متعدد الاستخدامات الخاص بنا هو الحل الأمثل لإدارة أعمالك بكفاءة ومرونة. سواء كنت تدير مطعماً، متجراً للبيع بالتجزئة. نظام POS متعدد الاستخدامات ',
+  },
+  {
+    image: term1,
+    title: '5 نص مؤقت',
+
+    text: 'نظام POS متعدد الاستخدامات الخاص بنا هو الحل الأمثل لإدارة أعمالك بكفاءة ومرونة. سواء كنت تدير مطعماً، متجراً للبيع بالتجزئة. نظام POS متعدد الاستخدامات ',
+  },
+])
 </script>
 
 <template>
   <div class="terminology">
+    <img class="hero-circel1" src="@/assets/images/hero-circle1.svg" alt="" />
     <div
       class="d-flex justify-center align-center mb-4"
       style="flex-direction: column"
@@ -27,16 +59,18 @@ const handleActiveItemUpdated = (data) => {
       <!-- End Heading -->
     </div>
 
+    <!-- Start:: Terminology -->
+
     <!-- Start:: Active Card -->
     <VContainer>
       <div class="active-card mb-3" v-if="activeData">
         <VRow>
-          <VCol cols="12" md="6" sm="12" class="pl-0 pr-0">
+          <VCol cols="12" md="5" sm="12" class="pl-0 pr-0">
             <div class="image pr-4 pt-4">
               <img :src="activeData.image" />
             </div>
           </VCol>
-          <VCol cols="12" md="6" sm="12">
+          <VCol cols="12" md="7" sm="12" class="showText">
             <div class="text">
               <h3>
                 {{ activeData.title }}
@@ -51,22 +85,53 @@ const handleActiveItemUpdated = (data) => {
     </VContainer>
     <!-- End:: Active Card -->
 
-    <!-- Start:: Terminology -->
-    <TerminologyCard @active-item-updated="handleActiveItemUpdated" />
+    <!-- <TerminologyCard  /> -->
+    <TerminologysCarousel
+      :Terminologys="Terminologys"
+      @active-item-updated="handleActiveItemUpdated"
+    />
 
     <!-- End:: Terminology -->
+
+    <img class="hero-circel2" src="@/assets/images/hero-circle2.svg" alt="" />
   </div>
 </template>
 
 <style lang="scss" scoped>
 .terminology {
+  position: relative;
+  background-image: url('@/assets/images/terminology-background.svg') !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  block-size: 100%;
+  inline-size: 100%;
+
+  .hero-circel1 {
+    position: absolute;
+    inset-block-start: 30%;
+  }
+
+  .hero-circel2 {
+    position: absolute;
+    inset-block-end: 36%;
+    inset-inline-end: 0;
+  }
+
+  .heading {
+    inline-size: 41%;
+    margin-block-end: 0;
+
+    .mainPargraph {
+      margin-block-end: 11px;
+    }
+  }
+
   .active-card {
     .image {
       border-radius: 24px;
       background: linear-gradient(142.84deg, #157d99 0%, #70a1e5 100%);
-
-      // block-size: 310px;
-      inline-size: 70%;
+      block-size: 427.47px;
+      inline-size: 564px;
 
       img {
         display: block;
@@ -78,22 +143,43 @@ const handleActiveItemUpdated = (data) => {
       }
     }
 
+    .showText {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
     .text {
+      margin-inline-start: 49px;
+
       h3 {
         color: #1c1c1c;
+        font-family: Cairo-SemiBold;
         font-size: 32px;
         font-weight: 600;
         line-height: 59.97px;
+        margin-block-end: 10px;
       }
 
       p {
         color: #1c1c1c;
+        font-family: Cairo-Regular;
         font-size: 16px;
         font-weight: 400;
         inline-size: 80%;
         line-height: 29.98px;
         text-align: justify;
       }
+    }
+  }
+}
+
+@media (max-width: 787px) {
+  .terminology {
+    .hero-circel1,
+    .hero-circel2 {
+      display: none;
     }
   }
 }

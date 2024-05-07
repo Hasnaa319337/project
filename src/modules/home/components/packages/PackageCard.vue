@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+const props = defineProps<Props>()
 interface Props {
   package: {
     title: string
@@ -9,7 +10,6 @@ interface Props {
   }
 }
 const buttonContent = ref('اشترك الان')
-const props = defineProps<Props>()
 </script>
 
 <template>

@@ -29,6 +29,7 @@ const buttonContent = 'انضم الينا'
 
 <style lang="scss">
 .HeroComponent {
+  position: relative;
   background-image: url('@/assets/images/hero1.svg') !important;
   background-repeat: no-repeat;
   background-size: cover;
@@ -37,12 +38,12 @@ const buttonContent = 'انضم الينا'
 
   .hero-circel1 {
     position: absolute;
-    inset-block-start: 2.7%;
+    inset-block-start: 15%;
   }
 
   .hero-circel2 {
     position: absolute;
-    inset-block-start: 6%;
+    inset-block-start: 40%;
     inset-inline-end: 0;
   }
 

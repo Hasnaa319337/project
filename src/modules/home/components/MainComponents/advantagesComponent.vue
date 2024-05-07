@@ -112,7 +112,8 @@ const iconStyle = (color) => {
       border: 1px solid #70a1e5;
       border-radius: 16px;
       background: transparent;
-      block-size: 278px;
+
+      // block-size: 278px;
       gap: 2px;
       margin-block-start: 5px;
       margin-inline-start: 5px;

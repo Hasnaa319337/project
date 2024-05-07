@@ -175,7 +175,7 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
                     :key="index"
                     class="headers"
                   >
-                    <VIcon icon="mdi-chevron-left" />
+                    <img src="@/assets/images/Icon-Stroke.svg" />
                     <span>{{ head.title }}</span>
                   </VListItem>
                 </div>
@@ -185,7 +185,7 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
                     :key="index"
                     class="headers"
                   >
-                    <VIcon icon="mdi-chevron-left" />
+                    <img src="@/assets/images/Icon-Stroke.svg" />
                     <span>{{ head.title }}</span>
                   </VListItem>
                 </div>
@@ -394,13 +394,17 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
       display: flex;
       align-items: center;
 
-      span,
-      svg {
+      span {
         color: #000;
         font-family: Cairo-Light;
         font-size: 16px !important;
         font-weight: 300;
         line-height: 29.98px;
+      }
+
+      img {
+        display: inline-block;
+        margin-inline-end: 7px;
       }
     }
   }
@@ -454,6 +458,19 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
     inline-size: 100% !important;
     line-height: 18.7px;
     margin-block-end: 0 !important;
+  }
+}
+
+@media (max-width: 787px) {
+  .footer {
+    margin-block-start: 30px;
+    padding-block-end: 25px;
+    padding-block-start: 20px;
+    padding-inline-start: 5px;
+
+    .content p {
+      inline-size: 90%;
+    }
   }
 }
 </style>

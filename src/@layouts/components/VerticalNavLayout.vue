@@ -124,7 +124,7 @@ export default defineComponent({
       )
 
       // 👉 Footer
-      const footer = h('footer', { class: 'layout-footer' }, [
+      const footer = h('footer', { class: 'footer' }, [
         h('div', { class: 'footer-content-container' }, slots.footer?.()),
       ])
 

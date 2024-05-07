@@ -8,13 +8,13 @@
         :responsiveOptions="responsiveOptions"
       >
         <template #item="slotProps">
-          <div class="border-1 border-round m-2 border-style" dir="rtl">
+          <div class="m-2 border-style" dir="rtl">
             <div class="mb-3">
-              <div class="relative mx-auto">
+              <div class="relative mx-auto blog-image">
                 <img
                   :src="slotProps.data.image"
                   :alt="slotProps.data.name"
-                  class="w-full border-round"
+                  class="w-full"
                 />
               </div>
             </div>
@@ -25,7 +25,7 @@
               <div class="flex justify-content-between align-items-center">
                 <router-link to="/">
                   <span class="ml-2">أقرأ المزيد</span>
-                  <VIcon icon="mdi-arrow-left" class="icon" />
+                  <img src="@/assets/images/Symbol.svg" />
                 </router-link>
               </div>
             </div>
@@ -96,14 +96,21 @@ export default {
 <style lang="scss">
 .blog-card .card {
   padding: 2rem;
-  border-radius: 10px;
-  background: var(--surface-card);
+  border-radius: 8px 8px 0 0;
+
+  // background: var(--surface-card);
   font-family: Cairo !important;
   margin-block-end: 1rem;
 
   .border-style {
-    border-color: #fff;
+    border: 1px solid #fff;
     border-radius: 8px !important;
+    transition: 0.3s all ease-in-out;
+
+    &:hover {
+      border: 1px solid #70a1e5 !important;
+      transition: 0.3s all ease-in-out;
+    }
   }
 }
 
@@ -117,6 +124,7 @@ export default {
 
   .title {
     color: #000;
+    font-family: Cairo-SemiBold;
     font-size: 20px;
     font-weight: 600;
     line-height: 37.48px;
@@ -124,6 +132,7 @@ export default {
 
   .date {
     color: #969696;
+    font-family: Cairo-Regular;
     font-size: 16px;
     font-weight: 400;
     line-height: 29.98px;
@@ -131,26 +140,28 @@ export default {
 
   .text {
     color: #000;
+    font-family: Cairo-Light;
     font-size: 16px;
     font-weight: 300;
     line-height: 29.98px;
   }
 
   a {
+    display: flex;
+    align-items: center;
     color: #599dc6;
+    font-family: Cairo-SemiBold;
     font-size: 16px;
     font-weight: 600;
     line-height: 27.2px;
 
     span {
-      border-block-end: 2px solid #599dc6;
+      // border-block-end: 2px solid #599dc6;
+      text-decoration: underline;
     }
 
-    .icon {
-      border: 2px solid #599dc6;
-      border-radius: 50%;
-      font-size: 18px !important;
-      font-weight: 700 !important;
+    img {
+      display: inline-block;
     }
   }
 }
@@ -159,10 +170,12 @@ export default {
   .p-link {
     border: 1px solid #c5dcef;
     border-radius: 50%;
+    block-size: 48px;
+    inline-size: 48px;
 
     svg {
       color: #0f578b;
-      inline-size: 12px;
+      inline-size: 22px;
     }
   }
 
@@ -175,15 +188,30 @@ export default {
   }
 
   .p-carousel-next {
+    margin-inline-start: 11px;
     transform: rotate(180deg);
   }
 
   .p-carousel-prev {
+    margin-inline-end: 11px;
     transform: rotate(180deg);
   }
 
   .p-carousel-indicators {
     display: none;
+  }
+}
+
+@media (max-width: 787px) {
+  .blog-card .card {
+    padding: 0;
+  }
+
+  .blog-card {
+    .p-carousel-next,
+    .p-carousel-prev {
+      display: none;
+    }
   }
 }
 </style>
