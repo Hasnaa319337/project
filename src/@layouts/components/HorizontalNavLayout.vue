@@ -74,6 +74,30 @@ router.afterEach(() => {
 })
 
 const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
+
+const handleScroll = () => {
+  // Retrieve elements by class name
+  let elements = document.getElementsByClassName(
+    'layout-navbar-and-nav-container'
+  )
+
+  // Loop through the elements and add class to each
+  for (let element of elements) {
+    if (window.pageYOffset === 0) {
+      element.style.top = '5px' // Set top margin to 5px when scrolled to top
+    } else {
+      element.style.top = '0' // Reset top margin to 0 when scrolled down
+    }
+    element.classList.toggle('nonTop', window.pageYOffset > 0) // Toggle class based on scroll position
+  }
+
+  console.log('Scrolled')
+}
+
+// Add scroll event listener when component is mounted
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
 </script>
 
 <template>
@@ -472,5 +496,11 @@ const { _layoutClasses: layoutClasses, isNavbarBlurEnabled } = useLayouts()
       inline-size: 90%;
     }
   }
+}
+
+.nonTop {
+  inset-block-start: 0 !important;
+  margin-block-start: 0 !important;
+  transition: 0.3s all ease-in-out;
 }
 </style>

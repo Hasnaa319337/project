@@ -25,8 +25,6 @@ interface Props {
     text: string
   }
 }
-
-console.log(props.Terminology)
 </script>
 
 <style lang="scss">
