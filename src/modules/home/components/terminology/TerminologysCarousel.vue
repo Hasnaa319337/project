@@ -66,7 +66,6 @@ export default defineComponent({
 
   setup(props, { emit }) {
     const activeItem = ref(0)
-    console.log(activeItem.value)
     emit('active-item-updated', props.Terminologys[activeItem.value])
     const handleSlideStart = (data) => {
       activeItem.value = data.currentSlideIndex
