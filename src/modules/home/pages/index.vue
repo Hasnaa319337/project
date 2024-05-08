@@ -5,6 +5,8 @@ import AdvantagesComponent from '../components/MainComponents/advantagesComponen
 import ContactComponent from '../components/MainComponents/contactComponent.vue'
 import PackagesComponents from '../components/MainComponents/packagesComponents.vue'
 import PropertiesComponent from '../components/MainComponents/propertiesComponent.vue'
+
+import BlogsComponent from '@/modules/home/components/MainComponents/blogsComponent.vue'
 </script>
 
 <template>
@@ -21,9 +23,9 @@ import PropertiesComponent from '../components/MainComponents/propertiesComponen
       <AdvantagesComponent />
       <PackagesComponents />
     </div>
-    <div class="blogs">
-      <!-- <BlogsComponent /> -->
-    </div>
+    <!-- <div class="blogs"> -->
+    <BlogsComponent />
+    <!-- </div> -->
     <VContainer>
       <ContactComponent />
     </VContainer>
@@ -40,9 +42,9 @@ import PropertiesComponent from '../components/MainComponents/propertiesComponen
   }
 
   .blogs {
-    // background-image: url("@/assets/images/blogs.svg") !important;
+    background-image: url('@/assets/images/blogs.svg') !important;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 50%;
     block-size: 100%;
     inline-size: 100%;
   }

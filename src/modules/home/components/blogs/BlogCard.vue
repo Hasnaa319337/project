@@ -84,10 +84,9 @@ export default {
 
   .border-style {
     box-sizing: border-box;
-    border: 1px solid #fff;
-    border-radius: 8px !important;
 
-    // inline-size: 390px;
+    // border: 1px solid #fff;
+    border-radius: 8px !important;
     transition: 0.3s all ease-in-out;
 
     &:hover {
@@ -205,6 +204,10 @@ export default {
     .p-carousel-prev {
       display: none;
     }
+  }
+
+  .p-carousel-items-content {
+    inline-size: 350px;
   }
 }
 
