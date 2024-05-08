@@ -4,7 +4,7 @@ const subtitle = 'الباقات'
 const mainPargraph =
   '      نظام POS متعدد الاستخدامات الخاص بنا هو الحل الأمثل لإدارة أعمالك بكفاءة ومرونة. سواء كنت تدير مطعماً، متجراً للبيع بالتجزئة.'
 
-const tab = ref('monthly')
+const tab = ref(1)
 const items = ref([
   { title: 'شهري', value: 'monthly' },
   { title: 'سنوي', value: 'yearly' },
@@ -68,7 +68,7 @@ const packages = ref([
 
       <!-- Start:: Packages -->
       <v-tabs v-model="tab" bg-color="transparent" color="basil" grow>
-        <v-tab v-for="(item, index) in items" :key="item.value" :value="index">
+        <v-tab v-for="(item, index) in items" :key="index" :value="index">
           {{ item.title }}
         </v-tab>
       </v-tabs>

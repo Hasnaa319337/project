@@ -46,7 +46,7 @@ const iconStyle = (color) => {
 
     <!-- Start:: contact info -->
     <VRow>
-      <VCol cols="12" md="6" sm="12">
+      <VCol cols="12" md="6" sm="12" class="contact-forms">
         <span class="card-title">اتصل بنا</span>
         <div class="single-contact">
           <div class="contact-form">
@@ -68,7 +68,7 @@ const iconStyle = (color) => {
           </div>
         </div>
       </VCol>
-      <VCol cols="12" md="6" sm="12">
+      <VCol cols="12" md="6" sm="12" class="contact-infos">
         <span class="card-title"> معلومات التواصل</span>
         <div class="single-contact">
           <div class="contact-info">
@@ -279,6 +279,40 @@ const iconStyle = (color) => {
     p {
       font-size: 14px !important;
     }
+  }
+}
+
+@media (min-width: 1200px) {
+  .contact-forms {
+    animation: slideAnimation1 ease-in-out;
+    animation-range-end: 500px;
+    animation-range-start: cover;
+    animation-timeline: view();
+  }
+
+  .contact-infos {
+    animation: slideAnimation2 ease-in-out;
+    animation-range-end: 500px;
+    animation-range-start: cover;
+    animation-timeline: view();
+  }
+}
+
+@keyframes slideAnimation1 {
+  0% {
+    transform: translateX(400px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideAnimation2 {
+  0% {
+    transform: translateX(-400px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 </style>

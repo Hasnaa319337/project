@@ -3,7 +3,7 @@
     <Carousel
       :breakpoints="breakpoints"
       :wrap-around="true"
-      :autoplay="1"
+      :autoplay="0"
       :transition="3000"
       dir="rtl"
       @slide-start="handleSlideStart"
@@ -66,10 +66,12 @@ export default defineComponent({
 
   setup(props, { emit }) {
     const activeItem = ref(0)
-
+    console.log(activeItem.value)
+    emit('active-item-updated', props.Terminologys[activeItem.value])
     const handleSlideStart = (data) => {
       activeItem.value = data.currentSlideIndex
-      emit('active-item-updated', props.Terminologys[activeItem.value])
+
+      emit('active-item-updated', props.Terminologys[activeItem.value + 1])
     }
 
     return { activeItem, handleSlideStart }
@@ -79,8 +81,17 @@ export default defineComponent({
 
 <style lang="scss">
 .carsouselTerminologys {
+  .carousel__next {
+    inset-inline-end: -72px;
+  }
+
+  .carousel__prev {
+    inset-inline-start: -72px;
+  }
+
   .carousel__next,
   .carousel__prev {
+    position: absolute;
     border: 1px solid #5396cd;
     border-radius: 50%;
     background: #fff;
@@ -110,13 +121,14 @@ export default defineComponent({
 
 .carsouselTerminologys {
   .carousel__viewport {
-    // overflow: hidden;
+    overflow: hidden;
     margin: auto;
-    inline-size: 90%;
+
+    // inline-size: 85%;
   }
 
   .carousel__slide {
-    inline-size: 458px !important;
+    // inline-size: 458px !important;
   }
 
   .carousel__slide--active {

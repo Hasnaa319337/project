@@ -94,4 +94,14 @@ interface Props {
     padding-block-end: 30px;
   }
 }
+
+@media (max-width: 1000px) {
+  .terminology-card {
+    .image-card {
+      inline-size: 92%;
+      margin-block: 14px;
+      margin-inline: auto;
+    }
+  }
+}
 </style>

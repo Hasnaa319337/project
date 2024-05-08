@@ -10,12 +10,8 @@
         <template #item="slotProps">
           <div class="m-2 border-style" dir="rtl">
             <div class="mb-3">
-              <div class="relative mx-auto blog-image">
-                <img
-                  :src="slotProps.data.image"
-                  :alt="slotProps.data.name"
-                  class="w-full"
-                />
+              <div class="blog-image">
+                <img :src="slotProps.data.image" :alt="slotProps.data.name" />
               </div>
             </div>
             <div class="p-3">
@@ -73,23 +69,7 @@ export default {
       (data) => (this.products = data.slice(0, 9))
     )
   },
-  methods: {
-    getSeverity(status) {
-      switch (status) {
-        case 'INSTOCK':
-          return 'success'
-
-        case 'LOWSTOCK':
-          return 'warning'
-
-        case 'OUTOFSTOCK':
-          return 'danger'
-
-        default:
-          return null
-      }
-    },
-  },
+  methods: {},
 }
 </script>
 
@@ -103,13 +83,26 @@ export default {
   margin-block-end: 1rem;
 
   .border-style {
+    box-sizing: border-box;
     border: 1px solid #fff;
     border-radius: 8px !important;
+
+    // inline-size: 390px;
     transition: 0.3s all ease-in-out;
 
     &:hover {
       border: 1px solid #70a1e5 !important;
       transition: 0.3s all ease-in-out;
+    }
+
+    .blog-image {
+      // block-size: 100px;
+      // inline-size: 100px;
+
+      img {
+        block-size: 100%;
+        inline-size: 100%;
+      }
     }
   }
 }
@@ -188,12 +181,12 @@ export default {
   }
 
   .p-carousel-next {
-    margin-inline-start: 11px;
+    margin-inline-start: 18px;
     transform: rotate(180deg);
   }
 
   .p-carousel-prev {
-    margin-inline-end: 11px;
+    margin-inline-end: 18px;
     transform: rotate(180deg);
   }
 
@@ -212,6 +205,12 @@ export default {
     .p-carousel-prev {
       display: none;
     }
+  }
+}
+
+@media (min-width: 1000px) {
+  .p-carousel-items-content {
+    // inline-size: 1250px;
   }
 }
 </style>

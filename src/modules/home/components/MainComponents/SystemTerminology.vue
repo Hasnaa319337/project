@@ -61,9 +61,19 @@ const Terminologys = ref([
 
     <!-- Start:: Terminology -->
 
-    <!-- Start:: Active Card -->
+    <!-- <TerminologyCard  /> -->
     <VContainer>
-      <div class="active-card mb-3" v-if="activeData">
+      <TerminologysCarousel
+        :Terminologys="Terminologys"
+        @active-item-updated="handleActiveItemUpdated"
+      />
+    </VContainer>
+
+    <!-- End:: Terminology -->
+
+    <!-- Start:: Active Card -->
+    <VContainer class="pl-6 pr-6">
+      <div class="active-card mb-5" v-if="activeData">
         <VRow>
           <VCol cols="12" md="5" sm="12" class="pl-0 pr-0">
             <div class="image pr-4 pt-4">
@@ -85,14 +95,6 @@ const Terminologys = ref([
     </VContainer>
     <!-- End:: Active Card -->
 
-    <!-- <TerminologyCard  /> -->
-    <TerminologysCarousel
-      :Terminologys="Terminologys"
-      @active-item-updated="handleActiveItemUpdated"
-    />
-
-    <!-- End:: Terminology -->
-
     <img class="hero-circel2" src="@/assets/images/hero-circle2.svg" alt="" />
   </div>
 </template>
@@ -102,13 +104,13 @@ const Terminologys = ref([
   position: relative;
   background-image: url('@/assets/images/terminology-background.svg') !important;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 50%;
   block-size: 100%;
   inline-size: 100%;
 
   .hero-circel1 {
     position: absolute;
-    inset-block-start: 30%;
+    inset-block-start: 40%;
   }
 
   .hero-circel2 {
@@ -175,11 +177,20 @@ const Terminologys = ref([
   }
 }
 
-@media (max-width: 787px) {
+@media (max-width: 1000px) {
   .terminology {
     .hero-circel1,
     .hero-circel2 {
       display: none;
+    }
+  }
+
+  .active-card {
+    .image {
+      border-radius: 24px;
+      background: linear-gradient(142.84deg, #157d99 0%, #70a1e5 100%);
+      block-size: auto !important;
+      inline-size: auto !important;
     }
   }
 }

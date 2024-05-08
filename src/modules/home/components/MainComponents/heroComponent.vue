@@ -9,8 +9,17 @@ const buttonContent = 'انضم الينا'
       class="d-flex justify-center align-center hero"
       style="flex-direction: column"
     >
-      <div class="heading d-flex align-center">
-        <h3 class=" ">قم بتطوير أعمالك اليوم مع نظام POS المبتكر</h3>
+      <div
+        class="heading d-flex align-center"
+        data-aos="fade-down"
+        data-aos-offset="0"
+        data-aos-duration="500"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top-center"
+      >
+        <h3>قم بتطوير أعمالك اليوم مع نظام POS المبتكر</h3>
         <p class="">
           نظام POS متعدد الاستخدامات الخاص بنا هو الحل الأمثل لإدارة أعمالك
           بكفاءة ومرونة. سواء كنت تدير مطعماً، متجراً للبيع بالتجزئة.
@@ -32,7 +41,7 @@ const buttonContent = 'انضم الينا'
   position: relative;
   background-image: url('@/assets/images/hero1.svg') !important;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   block-size: 100%;
   inline-size: 100%;
 

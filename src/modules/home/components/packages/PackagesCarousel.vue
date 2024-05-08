@@ -78,4 +78,8 @@ export default defineComponent({
     inline-size: 90% !important;
   }
 }
+
+.v-window-item {
+  display: block !important;
+}
 </style>

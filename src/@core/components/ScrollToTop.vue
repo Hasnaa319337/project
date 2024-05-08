@@ -12,14 +12,21 @@ const scrollToTop = () => {
 <template>
   <VScaleTransition
     style="
-      background: linear-gradient(142.84deg, #157d99 0%, #70a1e5 100%);
+      background: linear-gradient(
+        142.84deg,
+        #157d99 0%,
+        #70a1e5 100%
+      ) !important;
       transform-origin: center;
-"
+    "
     class="scroll-to-top d-print-none"
   >
     <VBtn v-show="y > 200" icon density="comfortable" @click="scrollToTop">
-      <VIcon size="22" icon="mdi-arrow-up"   style="
-    background: none !important;color: #fff;"/> 
+      <VIcon
+        size="22"
+        icon="mdi-arrow-up"
+        style="background: none !important; color: #fff"
+      />
     </VBtn>
   </VScaleTransition>
 </template>

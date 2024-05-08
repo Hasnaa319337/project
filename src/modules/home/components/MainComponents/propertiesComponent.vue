@@ -65,10 +65,10 @@ const mainPargraph =
           <v-window-item v-for="n in 4" :key="n" :value="n">
             <v-container fluid>
               <v-row v-for="report in reports" class="card-row mb-5">
-                <VCol cols="12" lg="6" md="6" sm="12">
+                <VCol cols="12" lg="6" md="6" sm="12" class="card-info">
                   <div class="d-flex contain" style="flex-direction: column">
-                    <h6 class="">التقارير</h6>
-                    <p>
+                    <h6 class="report-title">التقارير</h6>
+                    <p class="report-text">
                       نظام POS متعدد الاستخدامات الخاص بنا هو الحل الأمثل لإدارة
                       أعمالك بكفاءة ومرونة. سواء كنت تدير مطعماً، متجراً للبيع
                       بالتجزئة.
@@ -85,7 +85,7 @@ const mainPargraph =
                     </VList>
                   </div>
                 </VCol>
-                <VCol cols="12" lg="6" md="6" sm="12">
+                <VCol cols="12" lg="6" md="6" sm="12" class="card-image">
                   <img :src="report.image" />
                 </VCol>
               </v-row>
