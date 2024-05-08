@@ -80,13 +80,6 @@ export default defineComponent({
 
 <style lang="scss">
 .carsouselTerminologys {
-  @media (min-width: 1280px) {
-    .v-container {
-      max-inline-size: 1200px;
-      max-inline-size: 1371px;
-    }
-  }
-
   .carousel__next {
     inset-inline-end: -72px;
   }
