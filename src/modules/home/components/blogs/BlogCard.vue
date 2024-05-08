@@ -87,11 +87,11 @@ export default {
 
     // border: 1px solid #fff;
     border-radius: 8px !important;
-    transition: 0.3s all ease-in-out;
+    transition: 0.2s all ease-in-out;
 
     &:hover {
       border: 1px solid #70a1e5 !important;
-      transition: 0.3s all ease-in-out;
+      transition: 0.2s all ease-in-out;
     }
 
     .blog-image {
