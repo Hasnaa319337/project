@@ -81,6 +81,14 @@ const iconStyle = (color) => {
           sm="6"
           v-for="card in cards"
           style="padding-top: 0; padding-inline-end: 0"
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="2000"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true"
+          data-aos-once="true"
+          data-aos-anchor-placement="top-center"
         >
           <div class="card" style="flex-direction: column">
             <div :style="iconStyle(card.color)" class="iconCircle">
@@ -111,6 +119,11 @@ const iconStyle = (color) => {
       padding: 23px;
       border: 1px solid #70a1e5;
       border-radius: 16px;
+
+      // animation: fade-in ease-in-out;
+      animation-range-end: 200px;
+      animation-range-start: cover;
+      animation-timeline: view();
       background: transparent;
 
       // block-size: 278px;
@@ -193,6 +206,16 @@ const iconStyle = (color) => {
         font-size: 14px !important;
       }
     }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 </style>

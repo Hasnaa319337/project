@@ -136,7 +136,8 @@ const buttonContent = 'انضم الينا'
       margin-block-start: 64px;
 
       h3 {
-        font-size: 40px;
+        font-size: 37px;
+        line-height: 60px;
       }
 
       p {
@@ -146,6 +147,15 @@ const buttonContent = 'انضم الينا'
 
     .hero-circel2 {
       display: none;
+    }
+
+    .dashboardImage {
+      margin-block: auto;
+      margin-inline: 5px;
+
+      img {
+        inline-size: 100%;
+      }
     }
   }
 }

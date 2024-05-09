@@ -75,7 +75,7 @@ const Terminologys = ref([
     <VContainer class="pl-6 pr-6">
       <div class="active-card mb-5" v-if="activeData">
         <VRow>
-          <VCol cols="12" md="5" sm="12" class="pl-0 pr-0">
+          <VCol cols="12" md="5" sm="12" class="pl-0 pr-0 activeImage">
             <div class="image pr-4 pt-4">
               <img :src="activeData.image" />
             </div>
@@ -192,6 +192,40 @@ const Terminologys = ref([
       block-size: auto !important;
       inline-size: auto !important;
     }
+  }
+}
+
+.activeImage {
+  animation: slideAnimation1 ease-in-out;
+  animation-range-end: 500px;
+  animation-range-start: cover;
+  animation-timeline: view();
+}
+
+.showText {
+  animation: slideAnimation2 ease-in-out;
+  animation-range-end: 500px;
+  animation-range-start: cover;
+  animation-timeline: view();
+}
+
+@keyframes slideAnimation1 {
+  0% {
+    transform: translateX(400px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideAnimation2 {
+  0% {
+    transform: translateX(-400px);
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }
 </style>
