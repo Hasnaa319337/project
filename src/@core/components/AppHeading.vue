@@ -28,7 +28,7 @@ const props = defineProps<Props>()
   margin-block-start: 40px;
 
   h3 {
-    // animation: opacity1 ease-in-out;
+    animation: opacity1 ease-in-out;
 
     // animation-duration: 500ms;
     animation-range-end: 500px;
@@ -39,7 +39,7 @@ const props = defineProps<Props>()
   }
 
   p {
-    // animation: opacity2 ease-in-out;
+    animation: opacity2 ease-in-out;
     animation-range-end: 500px;
     animation-range-start: cover;
 
@@ -52,6 +52,7 @@ const props = defineProps<Props>()
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -61,6 +62,7 @@ const props = defineProps<Props>()
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
