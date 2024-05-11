@@ -46,7 +46,20 @@ const iconStyle = (color) => {
 
     <!-- Start:: contact info -->
     <VRow>
-      <VCol cols="12" md="6" sm="12" class="contact-forms">
+      <VCol
+        cols="12"
+        md="6"
+        sm="12"
+        class="contact-forms"
+        data-aos="zoom-out"
+        data-aos-offset="600"
+        data-aos-delay="50"
+        data-aos-duration="2000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="true"
+        data-aos-anchor-placement="top-center"
+      >
         <span class="card-title">اتصل بنا</span>
         <div class="single-contact">
           <div class="contact-form">
@@ -68,7 +81,20 @@ const iconStyle = (color) => {
           </div>
         </div>
       </VCol>
-      <VCol cols="12" md="6" sm="12" class="contact-infos">
+      <VCol
+        cols="12"
+        md="6"
+        sm="12"
+        class="contact-infos"
+        data-aos="zoom-in"
+        data-aos-offset="600"
+        data-aos-delay="50"
+        data-aos-duration="2000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="true"
+        data-aos-anchor-placement="top-center"
+      >
         <span class="card-title"> معلومات التواصل</span>
         <div class="single-contact">
           <div class="contact-info">
@@ -287,14 +313,16 @@ const iconStyle = (color) => {
     animation: slideAnimation1 ease-in-out;
     animation-range-end: 500px;
     animation-range-start: cover;
-    animation-timeline: view();
+
+    //animation-timeline: view();
   }
 
   .contact-infos {
     animation: slideAnimation2 ease-in-out;
     animation-range-end: 500px;
     animation-range-start: cover;
-    animation-timeline: view();
+
+    // animation-timeline: view();
   }
 }
 
@@ -302,6 +330,7 @@ const iconStyle = (color) => {
   0% {
     transform: translateX(400px);
   }
+
   100% {
     transform: translateX(0);
   }
@@ -311,6 +340,7 @@ const iconStyle = (color) => {
   0% {
     transform: translateX(-400px);
   }
+
   100% {
     transform: translateX(0);
   }

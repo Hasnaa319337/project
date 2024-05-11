@@ -75,12 +75,38 @@ const Terminologys = ref([
     <VContainer class="pl-6 pr-6">
       <div class="active-card mb-5" v-if="activeData">
         <VRow>
-          <VCol cols="12" md="5" sm="12" class="pl-0 pr-0 activeImage">
+          <VCol
+            cols="12"
+            md="5"
+            sm="12"
+            class="pl-0 pr-0 activeImage"
+            data-aos="zoom-out"
+            data-aos-offset="600"
+            data-aos-delay="50"
+            data-aos-duration="2000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            data-aos-anchor-placement="top-center"
+          >
             <div class="image pr-4 pt-4">
               <img :src="activeData.image" />
             </div>
           </VCol>
-          <VCol cols="12" md="7" sm="12" class="showText">
+          <VCol
+            cols="12"
+            md="7"
+            sm="12"
+            class="showText"
+            data-aos="zoom-in"
+            data-aos-offset="600"
+            data-aos-delay="50"
+            data-aos-duration="2000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            data-aos-anchor-placement="top-center"
+          >
             <div class="text">
               <h3>
                 {{ activeData.title }}
@@ -199,14 +225,16 @@ const Terminologys = ref([
   animation: slideAnimation1 ease-in-out;
   animation-range-end: 500px;
   animation-range-start: cover;
-  animation-timeline: view();
+
+  // animation-timeline: view();
 }
 
 .showText {
   animation: slideAnimation2 ease-in-out;
   animation-range-end: 500px;
   animation-range-start: cover;
-  animation-timeline: view();
+
+  // animation-timeline: view();
 }
 
 @keyframes slideAnimation1 {
