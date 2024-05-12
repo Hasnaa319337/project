@@ -30,8 +30,10 @@ const headers = [
 
 const contactInfos = [
   {
-    label: 'رقم الجوال ',
-    value: '01032014789',
+    label1: 'الرئيسي',
+    label2: 'المكتب',
+    value1: '01032014789',
+    value2: '01032014789',
     icon: phoneIcon,
     color: '#E89271',
   },
@@ -214,7 +216,7 @@ onMounted(() => {
           <VCol cols="12" md="4" sm="12">
             <div>
               <h3>بيانات التواصل</h3>
-              <div style="margin-block-start: 39px">
+              <div style="margin-block-start: 49px">
                 <VRow
                   v-for="contact in contactInfos"
                   class="contactInfos"
@@ -225,7 +227,21 @@ onMounted(() => {
                   </div>
 
                   <div class="info">
-                    <p>{{ contact.value }}</p>
+                    <div v-if="contact.value1" style="margin-top: -13px">
+                      <p>
+                        <span class="contact-title"> الرئيسي : </span>
+                        <span class="contact-title2">
+                          {{ contact.value2 }}
+                        </span>
+                      </p>
+                      <p>
+                        <span class="contact-title"> المكتب : </span>
+                        <span class="contact-title2">
+                          {{ contact.value2 }}
+                        </span>
+                      </p>
+                    </div>
+                    <p v-else>{{ contact.value }}</p>
                   </div>
                 </VRow>
               </div>
@@ -497,5 +513,20 @@ onMounted(() => {
   inset-block-start: 0 !important;
   margin-block-start: 0 !important;
   transition: 0.3s all ease-in-out;
+}
+
+.contact-title {
+  color: #000;
+  font-family: Cairo-Medium;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.15px;
+}
+
+.contact-title2 {
+  font-family: Cairo-Light;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 19.15px;
 }
 </style>
