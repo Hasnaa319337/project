@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import PackagesCarousel from '../packages/PackagesCarousel.vue'
+import PackagesCarousel from '@/modules/home/components/packages/PackagesCarousel.vue'
 const subtitle = 'الباقات'
 const mainPargraph =
   '      نظام POS متعدد الاستخدامات الخاص بنا هو الحل الأمثل لإدارة أعمالك بكفاءة ومرونة. سواء كنت تدير مطعماً، متجراً للبيع بالتجزئة.'
 
-const tab = ref(1)
+const tab = ref(null)
 const items = ref([
   { title: 'شهري', value: 'monthly' },
   { title: 'سنوي', value: 'yearly' },
@@ -67,16 +67,23 @@ const packages = ref([
       <!-- End Heading -->
 
       <!-- Start:: Packages -->
-      <v-tabs v-model="tab" bg-color="transparent" color="basil" grow>
+      <!-- <v-tabs v-model="tab">
         <v-tab v-for="(item, index) in items" :key="index" :value="index">
           {{ item.title }}
         </v-tab>
+      </v-tabs> -->
+
+      <v-tabs v-model="tab" show-arrows class="mb-4">
+        <v-tab :value="1" class="">شهري</v-tab>
+        <v-tab :value="2"> سنوي</v-tab>
       </v-tabs>
 
       <v-card>
         <v-window v-model="tab" class="window">
-          <v-window-item>
-            <PackagesCarousel :packages="packages" />
+          <v-window-item v-for="n in 2" :key="n" :value="n">
+            <v-container fluid>
+              <PackagesCarousel :packages="packages" />
+            </v-container>
           </v-window-item>
         </v-window>
 

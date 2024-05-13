@@ -79,7 +79,7 @@ export default defineComponent({
   }
 }
 
-.v-window-item {
-  // display: block !important;
+.carsouselPackages .v-window-item {
+  display: block !important;
 }
 </style>
