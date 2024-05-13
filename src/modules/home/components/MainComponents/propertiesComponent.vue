@@ -62,6 +62,7 @@ const mainPargraph =
     <div class="cards">
       <v-card>
         <v-window v-model="tab" class="window">
+          <!-- v-for="n in 4" :key="n" :value="n" -->
           <v-window-item v-for="n in 4" :key="n" :value="n">
             <v-container fluid>
               <v-row v-for="report in reports" class="card-row mb-5">
@@ -107,7 +108,8 @@ const mainPargraph =
     background-image: url('@/assets/images/reports.svg') !important;
     background-repeat: no-repeat;
     background-size: cover;
-    block-size: 1900px;
+
+    // block-size: 1900px;
     inline-size: 100%;
   }
 
@@ -147,6 +149,8 @@ const mainPargraph =
   .cards .v-row {
     padding: 33px;
   }
+
+  transition: 0.3s all ease-in-out;
 
   .cards .window {
     .v-row:nth-child(2) {

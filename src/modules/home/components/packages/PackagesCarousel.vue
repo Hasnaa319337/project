@@ -80,6 +80,6 @@ export default defineComponent({
 }
 
 .v-window-item {
-  display: block !important;
+  // display: block !important;
 }
 </style>
