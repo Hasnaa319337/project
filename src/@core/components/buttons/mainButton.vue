@@ -23,7 +23,7 @@ const props = defineProps<Props>()
   border-width: 0;
   margin: 0;
   appearance: none;
-  background-color: #fff;
+  background: linear-gradient(142.84deg, #157d99 0%, #70a1e5 100%);
   color: #fff;
   cursor: pointer;
   font-size: 14px;
@@ -61,8 +61,7 @@ const props = defineProps<Props>()
   inset-block-start: 0;
   inset-inline-start: 0;
   transform: translateZ(0);
-  transition: clip-path 0.7s cubic-bezier(0.165, 0.84, 0.44, 1),
-    -webkit-clip-path 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: clip-path 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .button-48:hover::before {
@@ -81,5 +80,9 @@ const props = defineProps<Props>()
 
 .button-48:hover .text {
   color: #000 !important;
+}
+
+.button-48:hover {
+  background: #fff !important;
 }
 </style>

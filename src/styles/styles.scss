@@ -95,6 +95,10 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
 }
 
+.mainButton:hover {
+  // background-color: transparent !important;
+}
+
 .layout-wrapper.layout-nav-type-horizontal .layout-navbar-and-nav-container {
   background: #ffffffe5;
   box-shadow: none;

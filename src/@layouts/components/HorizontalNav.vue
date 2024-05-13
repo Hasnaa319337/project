@@ -7,8 +7,7 @@ defineProps<{
 }>()
 
 const resolveNavItemComponent = (item: NavLink | NavGroup) => {
-  if ('children' in item)
-    return HorizontalNavGroup
+  if ('children' in item) return HorizontalNavGroup
 
   return HorizontalNavLink
 }
@@ -31,5 +30,15 @@ const resolveNavItemComponent = (item: NavLink | NavGroup) => {
     display: flex;
     flex-wrap: wrap;
   }
+}
+
+.layout-horizontal-nav .nav-link a::before {
+  background: transparent !important;
+  transition: 0.2s all ease-in-out !important;
+}
+
+.layout-horizontal-nav .nav-link a:hover {
+  color: #63a8bb !important;
+  transition: 0.2s all ease-in-out !important;
 }
 </style>
